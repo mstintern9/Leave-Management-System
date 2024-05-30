@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
@@ -27,14 +27,21 @@ const Drawer = styled(MuiDrawer, {
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  const handleListItemClick = (event, index, navigation) => {
+    setSelectedIndex(index);
+    navigate(navigation);
+  };
+
   return (
-    <Drawer variant="permanent" >
+    <Drawer variant="permanent">
       <Divider />
-      <List className="list" >
+      <List className="list">
         {sidebarItems.map((item, index) => {
           if (item.caption) {
             return (
-              <ListItem key={index} disablePadding sx={{ display: "block",paddingLeft:"4vh",paddingTop:"10.4vh" }}>
+              <ListItem key={index} disablePadding sx={{ display: "block", paddingLeft: "4vh", paddingTop: "10.4vh" }}>
                 <ListItemText primary={item.caption} className="caption" />
               </ListItem>
             );
@@ -43,17 +50,28 @@ const Sidebar = () => {
               <ListItem
                 key={index}
                 disablePadding
-                sx={{ display: "block",paddingTop:"1vh",paddingLeft:"4vh" }}
-                onClick={() => navigate(item.navigation)}
+                sx={{ display: "block", paddingTop: "1vh", paddingLeft: "4vh" }}
+                onClick={(event) => handleListItemClick(event, index, item.navigation)}
               >
                 <ListItemButton
+                  selected={selectedIndex === index}
+                  disableRipple
+                  disableTouchRipple
                   sx={{
                     minHeight: 48,
                     justifyContent: "center",
                     px: 2.5,
-                    marginRight:"4vh",
-                    borderRadius:"1.3vh",
+                    marginRight: "4vh",
+                    borderRadius: "1.3vh",
                     "&:hover": {
+                      backgroundColor: "inherit",
+                      color: "inherit", 
+                    },
+                    "&.Mui-selected": {
+                      backgroundColor: "#2379CC",
+                      color: "#FBFBFB",
+                    },
+                    "&.Mui-focusVisible": {
                       backgroundColor: "#2379CC",
                       color: "#FBFBFB",
                     },
@@ -66,8 +84,8 @@ const Sidebar = () => {
             );
           }
         })}
-        <span className="sideBarBottom" >
-          <p style={{marginLeft: "-1.5vh",color:"#6C7882",fontSize:"12px"}} >Account</p>
+        <span className="sideBarBottom">
+          <p style={{ marginLeft: "-1.5vh", color: "#6C7882", fontSize: "12px" }}>Account</p>
           <p className="drawerParagraph"> <Person2OutlinedIcon />Profile</p>  
           <p className="drawerParagraph"> <MessageOutlinedIcon /> Chat</p>  
           <p className="drawerParagraph"> <SettingsOutlinedIcon /> Settings</p>  

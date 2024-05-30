@@ -1,0 +1,24 @@
+.dashboard{
+    height: 90.7vh;
+    margin-left: 32.1vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.title{
+    height: 12vh;
+    padding-top: 2vh;
+}
+.currentEmployees{
+    height: 22vh;
+    background-color: rgb(192, 244, 173);
+}
+.calender{
+    flex: 1;
+    background-color: rgba(87, 116, 248, 0.698);
+}
+.activity{
+    background-color: rgba(124, 75, 189, 0.337);
+    flex: 1;
+}
