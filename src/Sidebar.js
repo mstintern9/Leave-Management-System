@@ -9,6 +9,10 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { useNavigate } from "react-router-dom";
 import { sidebarItems } from "./modules/SidebarItems";
+import "./styling/sidebar.css";
+import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
+import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 
 const drawerWidth = 240;
 
@@ -24,13 +28,13 @@ const Drawer = styled(MuiDrawer, {
 const Sidebar = () => {
   const navigate = useNavigate();
   return (
-    <Drawer variant="permanent">
+    <Drawer variant="permanent" >
       <Divider />
       <List className="list" >
         {sidebarItems.map((item, index) => {
           if (item.caption) {
             return (
-              <ListItem key={index} disablePadding sx={{ display: "block" }}>
+              <ListItem key={index} disablePadding sx={{ display: "block",paddingLeft:"4vh",paddingTop:"10.4vh" }}>
                 <ListItemText primary={item.caption} className="caption" />
               </ListItem>
             );
@@ -39,7 +43,7 @@ const Sidebar = () => {
               <ListItem
                 key={index}
                 disablePadding
-                sx={{ display: "block" }}
+                sx={{ display: "block",paddingTop:"1vh",paddingLeft:"4vh" }}
                 onClick={() => navigate(item.navigation)}
               >
                 <ListItemButton
@@ -47,16 +51,27 @@ const Sidebar = () => {
                     minHeight: 48,
                     justifyContent: "center",
                     px: 2.5,
+                    marginRight:"4vh",
+                    borderRadius:"1.3vh",
+                    "&:hover": {
+                      backgroundColor: "#2379CC",
+                      color: "#FBFBFB",
+                    },
                   }}
                 >
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.name} />
                 </ListItemButton>
-                <hr className="break" />
               </ListItem>
             );
           }
         })}
+        <span className="sideBarBottom" >
+          <p style={{marginLeft: "-1.5vh",color:"#6C7882",fontSize:"12px"}} >Account</p>
+          <p className="drawerParagraph"> <Person2OutlinedIcon />Profile</p>  
+          <p className="drawerParagraph"> <MessageOutlinedIcon /> Chat</p>  
+          <p className="drawerParagraph"> <SettingsOutlinedIcon /> Settings</p>  
+        </span>
       </List>
     </Drawer>
   );

@@ -1,0 +1,31 @@
+.MuiPaper-root {
+  margin-top: 9.3vh;
+  width: 29vh;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 0.7vh;
+}
+
+.caption {
+  color: #6c7882;
+  padding-left: 2.2vh;
+  font-weight: 500;
+}
+
+.sideBarBottom {
+  margin-top: 31.2vh;
+  margin-left: 8.7vh;
+}
+
+.drawerParagraph {
+  color: #979fa6;
+  font-weight: 400;
+  font-size: 14.2px;
+  display: flex;
+  margin-left: -1.5vh;
+  gap: 5.3px;
+}
