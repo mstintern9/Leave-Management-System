@@ -21,3 +21,62 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# Dashboard duplicate
+
+import React from "react";
+import "../styling/dashboard.css";
+import CardComponent from "../components/cardComponent";
+import { Card, Grid, Paper, Box } from "@mui/material";
+
+export default function Dashboard() {
+  return (
+    <div className="dashboard">
+      <div className="title">
+        <p style={{color:"#2379CC",fontSize:"20px",fontWeight:500,paddingTop:"1vh"}} >Welcome Test User!</p>
+        <p style={{color:"#979FA6",fontWeight:500,fontSize:"16px"}} >Dashboard</p>
+      </div>
+      <Box  >
+        <Grid container sx={{border: '1px solid green',marginBottom:"2vh"}}>
+          <Grid item md={4} sx={{border: '1px solid red'}}>
+          <CardComponent sx={{border: '1px solid blue',marginTop:"0vh",width:"50.5vh",height:"19.7vh"}}>
+              sadasd
+            </CardComponent>
+          </Grid>
+          <Grid item md={4} sx={{border: '1px solid red'}}>
+          <CardComponent sx={{border: '1px solid blue',marginTop:"0vh",width:"50.5vh",height:"19.7vh"}}>
+              sadasd
+            </CardComponent>
+          </Grid>
+          <Grid item md={4} sx={{border: '1px solid red'}}>
+            <CardComponent sx={{border: '1px solid blue',marginTop:"0vh",width:"50.5vh",height:"19.7vh"}}>
+              sadasd
+            </CardComponent>
+          </Grid>
+          <Grid item md={8} sx={{border: '1px solid red'}}>
+            <CardComponent sx={{border: '1px solid blue',width:"107vh",marginTop:"1vh",height:"21vh"}}>
+              sadasd
+            </CardComponent>
+          </Grid>
+          <Grid item md={4} sx={{border: '1px solid red',height:"26vh"}}>
+            <CardComponent sx={{border: '1px solid blue',marginTop:"1vh",width:"51vh",height:"21vh"}}>
+              sadasd
+            </CardComponent>
+          </Grid>
+          <Grid item md={6} sx={{border: '1px solid red'}}>
+            <CardComponent sx={{border: '1px solid blue',width:"79vh",marginTop:"1vh",height:"19vh"}}>
+              sadasd
+            </CardComponent>
+          </Grid>
+          <Grid item md={6} sx={{border: '1px solid red'}}>
+            <CardComponent sx={{border: '1px solid blue',marginTop:"1vh",height:"19vh",width:"79.1vh"}}>
+              sadasd
+            </CardComponent>
+          </Grid>
+        </Grid>
+      </Box>
+      
+    </div>
+  );
+}
