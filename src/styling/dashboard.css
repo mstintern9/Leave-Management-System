@@ -1,28 +1,91 @@
-.dashboard{
-    height: 90.7vh;
-    margin-left: 32.1vh;
+.dashboard {
+  height: 90.7vh;
+  margin-left: 32.1vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.title {
+  height: 12vh;
+  padding-top: 2vh;
+}
+.currentEmployees {
+  height: 22vh;
+  background-color: rgb(192, 244, 173);
+}
+.calender {
+  flex: 1;
+  background-color: rgba(87, 116, 248, 0.698);
+}
+.activity {
+  background-color: rgba(124, 75, 189, 0.337);
+  flex: 1;
+}
+
+.presentEmployees {
+  position: relative;
+  top: -63px;
+  left: 41px;
+  width: 30vh;
+}
+.absentEmployees {
+  position: relative;
+  top: -23px;
+  left: 41px;
+}
+
+.leaveEmployees {
+  position: relative;
+  top: -23px;
+  left: 41px;
+}
+.calenderContainer {
+  display: flex;
+  height: 22vh;
+  flex-direction: column;
+}
+.date {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrowIcons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calenderDates {
+  background-color: #e6f2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 13.28px;
+  width: 13.3vh;
+  color: #011627;
+  font-size: 21px;
+  font-weight: 600;
+  position: relative;
+}
+
+.calenderContainer {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.activityTitle{
     display: flex;
-    flex-direction: column;
-    gap: 2vh;
+    justify-content: space-between;
 }
 
-.title{
-    height: 12vh;
-    padding-top: 2vh;
-}
-.currentEmployees{
-    height: 22vh;
-    background-color: rgb(192, 244, 173);
-}
-.calender{
-    flex: 1;
-    background-color: rgba(87, 116, 248, 0.698);
-}
-.activity{
-    background-color: rgba(124, 75, 189, 0.337);
-    flex: 1;
+.activitiesRow{
+    display: flex;
+    justify-content: space-between;
 }
 
-.css-mhc70k-MuiGrid-root{
-    /* margin-top: -116px; */
+.titleMeeting{
+    display: flex;
+    justify-content: space-between;
 }
