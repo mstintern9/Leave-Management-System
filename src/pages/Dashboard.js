@@ -1,7 +1,7 @@
 import React from "react";
 import "../styling/dashboard.css";
 import CardComponent from "../components/cardComponent";
-import { Card, Grid, Paper, Box } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 
 export default function Dashboard() {
   return (
@@ -27,13 +27,13 @@ export default function Dashboard() {
             <CardComponent
               sx={{
                 marginTop: "0vh",
-                width: "50.5vh",
-                height: "19.7vh",
+                width: "41.5vh",
+                height: "14.7vh",
                 boxShadow: "none",
               }}
             >
               <svg
-                style={{ position: "relative", top: 120, left: 440 }}
+                style={{ position: "relative", top: 82, left: 376 }}
                 width="64"
                 height="79"
                 viewBox="0 0 64 79"
@@ -103,7 +103,7 @@ export default function Dashboard() {
                     fontWeight: "700",
                     fontSize: "43.08px",
                     position: "relative",
-                    top: "-19px",
+                    top: "-43px",
                   }}
                 >
                   35
@@ -115,13 +115,13 @@ export default function Dashboard() {
             <CardComponent
               sx={{
                 marginTop: "0vh",
-                width: "50.5vh",
-                height: "19.7vh",
+                width: "41.5vh",
+                height: "14.7vh",
                 boxShadow: "none",
               }}
             >
               <svg
-                style={{ position: "relative", top: "160px", left: "440px" }}
+                style={{ position: "relative", top: "123px", left: "370px" }}
                 width="72"
                 height="34"
                 viewBox="0 0 72 34"
@@ -180,7 +180,7 @@ export default function Dashboard() {
                     fontWeight: "700",
                     fontSize: "43.08px",
                     position: "relative",
-                    top: "-19px",
+                    top: "-43px",
                   }}
                 >
                   5
@@ -192,13 +192,13 @@ export default function Dashboard() {
             <CardComponent
               sx={{
                 marginTop: "0vh",
-                width: "50.5vh",
-                height: "19.7vh",
+                width: "41.5vh",
+                height: "14.7vh",
                 boxShadow: "none",
               }}
             >
               <svg
-                style={{ position: "relative", top: "160px", left: "440px" }}
+                style={{ position: "relative", top: "123px", left: "370px" }}
                 width="72"
                 height="34"
                 viewBox="0 0 72 34"
@@ -256,7 +256,7 @@ export default function Dashboard() {
                     fontWeight: "700",
                     fontSize: "43.08px",
                     position: "relative",
-                    top: "-19px",
+                    top: "-43px",
                   }}
                 >
                   2
@@ -267,9 +267,9 @@ export default function Dashboard() {
           <Grid item md={8}>
             <CardComponent
               sx={{
-                width: "107vh",
+                width: "91.2vh",
                 marginTop: "1vh",
-                height: "21vh",
+                height: "25vh",
                 boxShadow: "none",
               }}
             >
@@ -371,14 +371,14 @@ export default function Dashboard() {
                         fontSize: "13.28px",
                         fontWeight: "400",
                         background: "#2379CC",
-                        width: "76px",
+                        width: "91px",
                         height: "30.54px",
                         borderRadius: "18.59px",
                         color: "#FFFFFF",
                         textAlign: "center",
                         padding: "1px",
                         position: "relative",
-                        top: "-1.7vh",
+                        top: "-2.7vh",
                         paddingTop: "4px",
                       }}
                     >
@@ -393,14 +393,14 @@ export default function Dashboard() {
                         fontSize: "13.28px",
                         fontWeight: "400",
                         background: "#2379CC",
-                        width: "76px",
+                        width: "91px",
                         height: "30.54px",
                         borderRadius: "18.59px",
                         color: "#FFFFFF",
                         textAlign: "center",
                         padding: "1px",
                         position: "relative",
-                        top: "-1.7vh",
+                        top: "-2.7vh",
                         paddingTop: "4px",
                       }}
                     >
@@ -415,14 +415,14 @@ export default function Dashboard() {
                         fontSize: "13.28px",
                         fontWeight: "400",
                         background: "#2379CC",
-                        width: "76px",
+                        width: "91px",
                         height: "30.54px",
                         borderRadius: "18.59px",
                         color: "#FFFFFF",
                         textAlign: "center",
                         padding: "1px",
                         position: "relative",
-                        top: "-1.7vh",
+                        top: "-2.7vh",
                         paddingTop: "4px",
                       }}
                     >
@@ -437,14 +437,14 @@ export default function Dashboard() {
                         fontSize: "13.28px",
                         fontWeight: "400",
                         background: "#2379CC",
-                        width: "76px",
+                        width: "91px",
                         height: "30.54px",
                         borderRadius: "18.59px",
                         color: "#FFFFFF",
                         textAlign: "center",
                         padding: "1px",
                         position: "relative",
-                        top: "-1.7vh",
+                        top: "-2.7vh",
                         paddingTop: "4px",
                       }}
                     >
@@ -459,14 +459,14 @@ export default function Dashboard() {
                         fontSize: "13.28px",
                         fontWeight: "400",
                         background: "#2379CC",
-                        width: "76px",
+                        width: "91px",
                         height: "30.54px",
                         borderRadius: "18.59px",
                         color: "#FFFFFF",
                         textAlign: "center",
                         padding: "1px",
                         position: "relative",
-                        top: "-1.7vh",
+                        top: "-2.7vh",
                         paddingTop: "4px",
                       }}
                     >
@@ -481,14 +481,14 @@ export default function Dashboard() {
                         fontSize: "13.28px",
                         fontWeight: "400",
                         background: "#2379CC",
-                        width: "76px",
+                        width: "91px",
                         height: "30.54px",
                         borderRadius: "18.59px",
                         color: "#FFFFFF",
                         textAlign: "center",
                         padding: "1px",
                         position: "relative",
-                        top: "-1.7vh",
+                        top: "-2.7vh",
                         paddingTop: "4px",
                       }}
                     >
@@ -503,14 +503,14 @@ export default function Dashboard() {
                         fontSize: "13.28px",
                         fontWeight: "400",
                         background: "#2379CC",
-                        width: "76px",
+                        width: "91px",
                         height: "30.54px",
                         borderRadius: "18.59px",
                         color: "#FFFFFF",
                         textAlign: "center",
                         padding: "1px",
                         position: "relative",
-                        top: "-1.7vh",
+                        top: "-2.7vh",
                         paddingTop: "4px",
                       }}
                     >
@@ -526,32 +526,80 @@ export default function Dashboard() {
             <CardComponent
               sx={{
                 marginTop: "1vh",
-                width: "51vh",
-                height: "21vh",
+                width: "42vh",
+                height: "25vh",
                 boxShadow: "none",
               }}
             >
               <div className="jobContainer">
                 <h3>Recent Added Jobs</h3>
                 <div className="recentJobs">
-                  <span style={{ background: "#F9F9F9", borderRadius: "10px" }}>
-                    <p style={{ height: "3px" }}>
-                      <h4>Jr. Frontend Engineer</h4>
+                  <CardComponent
+                    sx={{
+                      padding: "0",
+                      margin: "0",
+                      background: "#F9F9F9",
+                      boxShadow: "none",
+                      width: "42vh",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "630",
+                        paddingLeft: "9px",
+                      }}
+                    >
+                      Jr. Frontend Engineer
                     </p>
-                    <p style={{ height: "3px" }}>Indeed - 2 Days ago</p>
-                  </span>
-                  <span style={{ background: "#F9F9F9", borderRadius: "10px" }}>
-                    <p style={{ height: "3px" }}>
-                      <h4>iOS Developer</h4>
+                    <p style={{ fontSize: "13.1px", paddingLeft: "9px" }}>
+                      Indeed - 2 Days ago
                     </p>
-                    <p style={{ height: "3px" }}>Rozee.pk - 2 Days ago</p>
-                  </span>
-                  <span style={{ background: "#F9F9F9", borderRadius: "10px" }}>
-                    <p style={{ height: "3px" }}>
-                      <h4>Project Manager</h4>
+                  </CardComponent>
+                  <CardComponent
+                    sx={{
+                      padding: "0",
+                      margin: "0",
+                      background: "#F9F9F9",
+                      boxShadow: "none",
+                      width: "42vh",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "630",
+                        paddingLeft: "9px",
+                      }}
+                    >
+                      iOS Developer
                     </p>
-                    <p style={{ height: "3px" }}>LinkedIn - 2 Days ago</p>
-                  </span>
+                    <p style={{ fontSize: "13.1px", paddingLeft: "9px" }}>
+                      Rozee.pk - 2 Days ago
+                    </p>
+                  </CardComponent>
+                  <CardComponent
+                    sx={{
+                      padding: "0",
+                      margin: "0",
+                      background: "#F9F9F9",
+                      boxShadow: "none",
+                      width: "42vh",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: "630",
+                        paddingLeft: "9px",
+                      }}
+                    >
+                      Project Manager
+                    </p>
+                    <p style={{ fontSize: "13.1px", paddingLeft: "9px" }}>
+                      LinkedIn - 2 Days ago
+                    </p>
+                  </CardComponent>
                 </div>
               </div>
             </CardComponent>
@@ -559,9 +607,9 @@ export default function Dashboard() {
           <Grid item md={6}>
             <CardComponent
               sx={{
-                width: "79vh",
+                width: "68.2vh",
                 marginTop: "1vh",
-                height: "19vh",
+                height: "24vh",
                 boxShadow: "none",
               }}
             >
@@ -570,8 +618,8 @@ export default function Dashboard() {
                   <p
                     style={{
                       color: "#333333",
-                      fontSize: "18px",
-                      fontWeight: "600",
+                      fontSize: "19px",
+                      fontWeight: "640",
                     }}
                   >
                     Activity Feed
@@ -610,29 +658,31 @@ export default function Dashboard() {
                 <div className="activites">
                   <div className="activitiesRow">
                     <span>
-                      <p style={{ height: "5px" }}>Syed Taha Hasan</p>
-                      <p>10 mins ago</p>
+                      <p className="nameFeed">Syed Taha Hasan</p>
+                      <p style={{ fontSize: "11px" }}>10 mins ago</p>
                     </span>
                     <span>
-                      <p>Working</p>
-                    </span>
-                  </div>
-                  <div className="activitiesRow">
-                    <span>
-                      <p style={{ height: "5px" }}>Muhammad Nouman</p>
-                      <p>12 mins ago</p>
-                    </span>
-                    <span>
-                      <p>Working</p>
+                      <p className="statusFeed">Working</p>
                     </span>
                   </div>
                   <div className="activitiesRow">
                     <span>
-                      <p style={{ height: "5px" }}>Muhammad Bilawal</p>
-                      <p>20 mins ago</p>
+                      <p className="nameFeed">Muhammad Nouman</p>
+                      <p style={{ fontSize: "11px" }}>12 mins ago</p>
                     </span>
                     <span>
-                      <p>Working</p>
+                      <p className="statusFeed" style={{ fontSize: "13px" }}>
+                        Working
+                      </p>
+                    </span>
+                  </div>
+                  <div className="activitiesRow">
+                    <span>
+                      <p className="nameFeed">Muhammad Bilawal</p>
+                      <p style={{ fontSize: "11px" }}>20 mins ago</p>
+                    </span>
+                    <span>
+                      <p className="statusFeed">Working</p>
                     </span>
                   </div>
                 </div>
@@ -643,8 +693,8 @@ export default function Dashboard() {
             <CardComponent
               sx={{
                 marginTop: "1vh",
-                height: "19vh",
-                width: "79.1vh",
+                height: "24vh",
+                width: "67.2vh",
                 boxShadow: "none",
               }}
             >
@@ -653,28 +703,30 @@ export default function Dashboard() {
                   <p
                     style={{
                       color: "#333333",
-                      fontSize: "18px",
-                      fontWeight: "600",
+                      fontSize: "19px",
+                      fontWeight: "700",
                     }}
                   >
-                    Activity Feed
+                    Meetings
                   </p>
 
                   <span
                     style={{
                       border: "1px solid #F0F0F0",
-                      padding: "3px 5px 3px 2px",
+                      padding: "3px 6px 5px 8px",
                       height: "3vh",
+                      borderRadius:"10px"
                     }}
                   >
                     <p
                       style={{
                         color: "#333333",
-                        fontSize: "12px",
-                        fontWeight: "500",
+                        fontSize: "11.6px",
+                        paddingBottom:"-4px",
+                        fontWeight: "700",
                       }}
                     >
-                      All Activity{" "}
+                      Create New{" "}
                       <svg
                         width="11"
                         height="8"
@@ -691,9 +743,308 @@ export default function Dashboard() {
                   </span>
                 </div>
                 <div className="meetingData">
-                  <div className="meetingRow" ></div>
-                  <div className="meetingRow" ></div>
-                  <div className="meetingRow" ></div>
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                    className="meetingRow"
+                  >
+                    <span className="meetingSpan">
+                      <svg
+                        width="86"
+                        height="92"
+                        viewBox="0 0 86 92"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g filter="url(#filter0_d_1_252)">
+                          <rect
+                            x="20"
+                            y="22"
+                            width="40"
+                            height="40"
+                            rx="6"
+                            fill="white"
+                            shape-rendering="crispEdges"
+                          />
+                          <path
+                            d="M28.1167 29.2727H30.0513L32.6422 35.5966H32.7445L35.3354 29.2727H37.2701V38H35.753V32.0043H35.6721L33.2601 37.9744H32.1266L29.7147 31.9915H29.6337V38H28.1167V29.2727ZM41.7786 38.1278C41.1394 38.1278 40.5854 37.9872 40.1167 37.706C39.6479 37.4247 39.2843 37.0312 39.0257 36.5256C38.7701 36.0199 38.6422 35.429 38.6422 34.7528C38.6422 34.0767 38.7701 33.4844 39.0257 32.9759C39.2843 32.4673 39.6479 32.0724 40.1167 31.7912C40.5854 31.5099 41.1394 31.3693 41.7786 31.3693C42.4178 31.3693 42.9718 31.5099 43.4405 31.7912C43.9093 32.0724 44.2715 32.4673 44.5272 32.9759C44.7857 33.4844 44.915 34.0767 44.915 34.7528C44.915 35.429 44.7857 36.0199 44.5272 36.5256C44.2715 37.0312 43.9093 37.4247 43.4405 37.706C42.9718 37.9872 42.4178 38.1278 41.7786 38.1278ZM41.7871 36.892C42.1337 36.892 42.4235 36.7969 42.6564 36.6065C42.8894 36.4134 43.0627 36.1548 43.1763 35.831C43.2928 35.5071 43.351 35.1463 43.351 34.7486C43.351 34.348 43.2928 33.9858 43.1763 33.6619C43.0627 33.3352 42.8894 33.0753 42.6564 32.8821C42.4235 32.6889 42.1337 32.5923 41.7871 32.5923C41.432 32.5923 41.1365 32.6889 40.9007 32.8821C40.6678 33.0753 40.4931 33.3352 40.3766 33.6619C40.263 33.9858 40.2061 34.348 40.2061 34.7486C40.2061 35.1463 40.263 35.5071 40.3766 35.831C40.4931 36.1548 40.6678 36.4134 40.9007 36.6065C41.1365 36.7969 41.432 36.892 41.7871 36.892ZM47.7669 34.1648V38H46.2243V31.4545H47.6987V32.5668H47.7754C47.926 32.2003 48.166 31.9091 48.4956 31.6932C48.8279 31.4773 49.2385 31.3693 49.7271 31.3693C50.1788 31.3693 50.5723 31.4659 50.9075 31.6591C51.2456 31.8523 51.5069 32.1321 51.6916 32.4986C51.8791 32.8651 51.9714 33.3097 51.9686 33.8324V38H50.426V34.071C50.426 33.6335 50.3123 33.2912 50.085 33.044C49.8606 32.7969 49.5495 32.6733 49.1518 32.6733C48.8819 32.6733 48.6419 32.733 48.4316 32.8523C48.2243 32.9687 48.0609 33.1378 47.9416 33.3594C47.8251 33.581 47.7669 33.8494 47.7669 34.1648Z"
+                            fill="#2379CC"
+                          />
+                          <path
+                            d="M36.9716 45.2727V54H35.9148V46.3807H35.8636L33.733 47.7955V46.7216L35.9148 45.2727H36.9716ZM42.3281 54.1193C41.6861 54.1193 41.1392 53.9446 40.6875 53.5952C40.2358 53.2429 39.8906 52.733 39.652 52.0653C39.4134 51.3949 39.294 50.5852 39.294 49.6364C39.294 48.6932 39.4134 47.8878 39.652 47.2202C39.8935 46.5497 40.2401 46.0384 40.6918 45.6861C41.1463 45.331 41.6918 45.1534 42.3281 45.1534C42.9645 45.1534 43.5085 45.331 43.9602 45.6861C44.4148 46.0384 44.7614 46.5497 45 47.2202C45.2415 47.8878 45.3622 48.6932 45.3622 49.6364C45.3622 50.5852 45.2429 51.3949 45.0043 52.0653C44.7656 52.733 44.4205 53.2429 43.9688 53.5952C43.517 53.9446 42.9702 54.1193 42.3281 54.1193ZM42.3281 53.1818C42.9645 53.1818 43.4588 52.875 43.8111 52.2614C44.1634 51.6477 44.3395 50.7727 44.3395 49.6364C44.3395 48.8807 44.2585 48.2372 44.0966 47.706C43.9375 47.1747 43.7074 46.7699 43.4062 46.4915C43.108 46.2131 42.7486 46.0739 42.3281 46.0739C41.6974 46.0739 41.2045 46.3849 40.8494 47.0071C40.4943 47.6264 40.3168 48.5028 40.3168 49.6364C40.3168 50.392 40.3963 51.0341 40.5554 51.5625C40.7145 52.0909 40.9432 52.4929 41.2415 52.7685C41.5426 53.044 41.9048 53.1818 42.3281 53.1818Z"
+                            fill="#011627"
+                          />
+                        </g>
+                        <defs>
+                          <filter
+                            id="filter0_d_1_252"
+                            x="-6"
+                            y="0"
+                            width="92"
+                            height="92"
+                            filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB"
+                          >
+                            <feFlood
+                              flood-opacity="0"
+                              result="BackgroundImageFix"
+                            />
+                            <feColorMatrix
+                              in="SourceAlpha"
+                              type="matrix"
+                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                              result="hardAlpha"
+                            />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="13" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix
+                              type="matrix"
+                              values="0 0 0 0 0.436545 0 0 0 0 0.436917 0 0 0 0 0.445833 0 0 0 0.12 0"
+                            />
+                            <feBlend
+                              mode="normal"
+                              in2="BackgroundImageFix"
+                              result="effect1_dropShadow_1_252"
+                            />
+                            <feBlend
+                              mode="normal"
+                              in="SourceGraphic"
+                              in2="effect1_dropShadow_1_252"
+                              result="shape"
+                            />
+                          </filter>
+                        </defs>
+                      </svg>
+                      <span>
+                        <p style={{ height: "8px" }}>Interview</p>
+                        <p style={{ height: "8px" }}>9:00 am - 11:30 am</p>
+                      </span>
+                    </span>
+                    <svg
+                      style={{ marginTop: "10px" }}
+                      width="26"
+                      height="26"
+                      viewBox="0 0 26 26"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="26" height="26" rx="5" fill="#F5F6FA" />
+                      <path
+                        d="M13 11C11.9008 11 11 11.9008 11 13C11 14.0992 11.9008 15 13 15C14.0992 15 15 14.0992 15 13C15 11.9008 14.0992 11 13 11Z"
+                        fill="#8F8F8F"
+                      />
+                      <path
+                        d="M13 5C11.9008 5 11 5.90076 11 7C11 8.09924 11.9008 9 13 9C14.0992 9 15 8.09924 15 7C15 5.90076 14.0992 5 13 5Z"
+                        fill="#8F8F8F"
+                      />
+                      <path
+                        d="M13 17C11.9008 17 11 17.9008 11 19C11 20.0992 11.9008 21 13 21C14.0992 21 15 20.0992 15 19C15 17.9008 14.0992 17 13 17Z"
+                        fill="#8F8F8F"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                    className="meetingRow"
+                  >
+                    <span className="meetingSpan">
+                      <svg
+                        width="86"
+                        height="92"
+                        viewBox="0 0 86 92"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g filter="url(#filter0_d_1_252)">
+                          <rect
+                            x="20"
+                            y="22"
+                            width="40"
+                            height="40"
+                            rx="6"
+                            fill="white"
+                            shape-rendering="crispEdges"
+                          />
+                          <path
+                            d="M28.1167 29.2727H30.0513L32.6422 35.5966H32.7445L35.3354 29.2727H37.2701V38H35.753V32.0043H35.6721L33.2601 37.9744H32.1266L29.7147 31.9915H29.6337V38H28.1167V29.2727ZM41.7786 38.1278C41.1394 38.1278 40.5854 37.9872 40.1167 37.706C39.6479 37.4247 39.2843 37.0312 39.0257 36.5256C38.7701 36.0199 38.6422 35.429 38.6422 34.7528C38.6422 34.0767 38.7701 33.4844 39.0257 32.9759C39.2843 32.4673 39.6479 32.0724 40.1167 31.7912C40.5854 31.5099 41.1394 31.3693 41.7786 31.3693C42.4178 31.3693 42.9718 31.5099 43.4405 31.7912C43.9093 32.0724 44.2715 32.4673 44.5272 32.9759C44.7857 33.4844 44.915 34.0767 44.915 34.7528C44.915 35.429 44.7857 36.0199 44.5272 36.5256C44.2715 37.0312 43.9093 37.4247 43.4405 37.706C42.9718 37.9872 42.4178 38.1278 41.7786 38.1278ZM41.7871 36.892C42.1337 36.892 42.4235 36.7969 42.6564 36.6065C42.8894 36.4134 43.0627 36.1548 43.1763 35.831C43.2928 35.5071 43.351 35.1463 43.351 34.7486C43.351 34.348 43.2928 33.9858 43.1763 33.6619C43.0627 33.3352 42.8894 33.0753 42.6564 32.8821C42.4235 32.6889 42.1337 32.5923 41.7871 32.5923C41.432 32.5923 41.1365 32.6889 40.9007 32.8821C40.6678 33.0753 40.4931 33.3352 40.3766 33.6619C40.263 33.9858 40.2061 34.348 40.2061 34.7486C40.2061 35.1463 40.263 35.5071 40.3766 35.831C40.4931 36.1548 40.6678 36.4134 40.9007 36.6065C41.1365 36.7969 41.432 36.892 41.7871 36.892ZM47.7669 34.1648V38H46.2243V31.4545H47.6987V32.5668H47.7754C47.926 32.2003 48.166 31.9091 48.4956 31.6932C48.8279 31.4773 49.2385 31.3693 49.7271 31.3693C50.1788 31.3693 50.5723 31.4659 50.9075 31.6591C51.2456 31.8523 51.5069 32.1321 51.6916 32.4986C51.8791 32.8651 51.9714 33.3097 51.9686 33.8324V38H50.426V34.071C50.426 33.6335 50.3123 33.2912 50.085 33.044C49.8606 32.7969 49.5495 32.6733 49.1518 32.6733C48.8819 32.6733 48.6419 32.733 48.4316 32.8523C48.2243 32.9687 48.0609 33.1378 47.9416 33.3594C47.8251 33.581 47.7669 33.8494 47.7669 34.1648Z"
+                            fill="#2379CC"
+                          />
+                          <path
+                            d="M36.9716 45.2727V54H35.9148V46.3807H35.8636L33.733 47.7955V46.7216L35.9148 45.2727H36.9716ZM42.3281 54.1193C41.6861 54.1193 41.1392 53.9446 40.6875 53.5952C40.2358 53.2429 39.8906 52.733 39.652 52.0653C39.4134 51.3949 39.294 50.5852 39.294 49.6364C39.294 48.6932 39.4134 47.8878 39.652 47.2202C39.8935 46.5497 40.2401 46.0384 40.6918 45.6861C41.1463 45.331 41.6918 45.1534 42.3281 45.1534C42.9645 45.1534 43.5085 45.331 43.9602 45.6861C44.4148 46.0384 44.7614 46.5497 45 47.2202C45.2415 47.8878 45.3622 48.6932 45.3622 49.6364C45.3622 50.5852 45.2429 51.3949 45.0043 52.0653C44.7656 52.733 44.4205 53.2429 43.9688 53.5952C43.517 53.9446 42.9702 54.1193 42.3281 54.1193ZM42.3281 53.1818C42.9645 53.1818 43.4588 52.875 43.8111 52.2614C44.1634 51.6477 44.3395 50.7727 44.3395 49.6364C44.3395 48.8807 44.2585 48.2372 44.0966 47.706C43.9375 47.1747 43.7074 46.7699 43.4062 46.4915C43.108 46.2131 42.7486 46.0739 42.3281 46.0739C41.6974 46.0739 41.2045 46.3849 40.8494 47.0071C40.4943 47.6264 40.3168 48.5028 40.3168 49.6364C40.3168 50.392 40.3963 51.0341 40.5554 51.5625C40.7145 52.0909 40.9432 52.4929 41.2415 52.7685C41.5426 53.044 41.9048 53.1818 42.3281 53.1818Z"
+                            fill="#011627"
+                          />
+                        </g>
+                        <defs>
+                          <filter
+                            id="filter0_d_1_252"
+                            x="-6"
+                            y="0"
+                            width="92"
+                            height="92"
+                            filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB"
+                          >
+                            <feFlood
+                              flood-opacity="0"
+                              result="BackgroundImageFix"
+                            />
+                            <feColorMatrix
+                              in="SourceAlpha"
+                              type="matrix"
+                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                              result="hardAlpha"
+                            />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="13" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix
+                              type="matrix"
+                              values="0 0 0 0 0.436545 0 0 0 0 0.436917 0 0 0 0 0.445833 0 0 0 0.12 0"
+                            />
+                            <feBlend
+                              mode="normal"
+                              in2="BackgroundImageFix"
+                              result="effect1_dropShadow_1_252"
+                            />
+                            <feBlend
+                              mode="normal"
+                              in="SourceGraphic"
+                              in2="effect1_dropShadow_1_252"
+                              result="shape"
+                            />
+                          </filter>
+                        </defs>
+                      </svg>
+                      <span>
+                        <p style={{ height: "8px" }}>Organizational Meeting</p>
+                        <p style={{ height: "8px" }}>9:00 am - 11:30 am</p>
+                      </span>
+                    </span>
+                    <svg
+                      style={{ marginTop: "10px" }}
+                      width="26"
+                      height="26"
+                      viewBox="0 0 26 26"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="26" height="26" rx="5" fill="#F5F6FA" />
+                      <path
+                        d="M13 11C11.9008 11 11 11.9008 11 13C11 14.0992 11.9008 15 13 15C14.0992 15 15 14.0992 15 13C15 11.9008 14.0992 11 13 11Z"
+                        fill="#8F8F8F"
+                      />
+                      <path
+                        d="M13 5C11.9008 5 11 5.90076 11 7C11 8.09924 11.9008 9 13 9C14.0992 9 15 8.09924 15 7C15 5.90076 14.0992 5 13 5Z"
+                        fill="#8F8F8F"
+                      />
+                      <path
+                        d="M13 17C11.9008 17 11 17.9008 11 19C11 20.0992 11.9008 21 13 21C14.0992 21 15 20.0992 15 19C15 17.9008 14.0992 17 13 17Z"
+                        fill="#8F8F8F"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                    className="meetingRow"
+                  >
+                    <span className="meetingSpan">
+                      <svg
+                        width="86"
+                        height="92"
+                        viewBox="0 0 86 92"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g filter="url(#filter0_d_1_252)">
+                          <rect
+                            x="20"
+                            y="22"
+                            width="40"
+                            height="40"
+                            rx="6"
+                            fill="white"
+                            shape-rendering="crispEdges"
+                          />
+                          <path
+                            d="M28.1167 29.2727H30.0513L32.6422 35.5966H32.7445L35.3354 29.2727H37.2701V38H35.753V32.0043H35.6721L33.2601 37.9744H32.1266L29.7147 31.9915H29.6337V38H28.1167V29.2727ZM41.7786 38.1278C41.1394 38.1278 40.5854 37.9872 40.1167 37.706C39.6479 37.4247 39.2843 37.0312 39.0257 36.5256C38.7701 36.0199 38.6422 35.429 38.6422 34.7528C38.6422 34.0767 38.7701 33.4844 39.0257 32.9759C39.2843 32.4673 39.6479 32.0724 40.1167 31.7912C40.5854 31.5099 41.1394 31.3693 41.7786 31.3693C42.4178 31.3693 42.9718 31.5099 43.4405 31.7912C43.9093 32.0724 44.2715 32.4673 44.5272 32.9759C44.7857 33.4844 44.915 34.0767 44.915 34.7528C44.915 35.429 44.7857 36.0199 44.5272 36.5256C44.2715 37.0312 43.9093 37.4247 43.4405 37.706C42.9718 37.9872 42.4178 38.1278 41.7786 38.1278ZM41.7871 36.892C42.1337 36.892 42.4235 36.7969 42.6564 36.6065C42.8894 36.4134 43.0627 36.1548 43.1763 35.831C43.2928 35.5071 43.351 35.1463 43.351 34.7486C43.351 34.348 43.2928 33.9858 43.1763 33.6619C43.0627 33.3352 42.8894 33.0753 42.6564 32.8821C42.4235 32.6889 42.1337 32.5923 41.7871 32.5923C41.432 32.5923 41.1365 32.6889 40.9007 32.8821C40.6678 33.0753 40.4931 33.3352 40.3766 33.6619C40.263 33.9858 40.2061 34.348 40.2061 34.7486C40.2061 35.1463 40.263 35.5071 40.3766 35.831C40.4931 36.1548 40.6678 36.4134 40.9007 36.6065C41.1365 36.7969 41.432 36.892 41.7871 36.892ZM47.7669 34.1648V38H46.2243V31.4545H47.6987V32.5668H47.7754C47.926 32.2003 48.166 31.9091 48.4956 31.6932C48.8279 31.4773 49.2385 31.3693 49.7271 31.3693C50.1788 31.3693 50.5723 31.4659 50.9075 31.6591C51.2456 31.8523 51.5069 32.1321 51.6916 32.4986C51.8791 32.8651 51.9714 33.3097 51.9686 33.8324V38H50.426V34.071C50.426 33.6335 50.3123 33.2912 50.085 33.044C49.8606 32.7969 49.5495 32.6733 49.1518 32.6733C48.8819 32.6733 48.6419 32.733 48.4316 32.8523C48.2243 32.9687 48.0609 33.1378 47.9416 33.3594C47.8251 33.581 47.7669 33.8494 47.7669 34.1648Z"
+                            fill="#2379CC"
+                          />
+                          <path
+                            d="M36.9716 45.2727V54H35.9148V46.3807H35.8636L33.733 47.7955V46.7216L35.9148 45.2727H36.9716ZM42.3281 54.1193C41.6861 54.1193 41.1392 53.9446 40.6875 53.5952C40.2358 53.2429 39.8906 52.733 39.652 52.0653C39.4134 51.3949 39.294 50.5852 39.294 49.6364C39.294 48.6932 39.4134 47.8878 39.652 47.2202C39.8935 46.5497 40.2401 46.0384 40.6918 45.6861C41.1463 45.331 41.6918 45.1534 42.3281 45.1534C42.9645 45.1534 43.5085 45.331 43.9602 45.6861C44.4148 46.0384 44.7614 46.5497 45 47.2202C45.2415 47.8878 45.3622 48.6932 45.3622 49.6364C45.3622 50.5852 45.2429 51.3949 45.0043 52.0653C44.7656 52.733 44.4205 53.2429 43.9688 53.5952C43.517 53.9446 42.9702 54.1193 42.3281 54.1193ZM42.3281 53.1818C42.9645 53.1818 43.4588 52.875 43.8111 52.2614C44.1634 51.6477 44.3395 50.7727 44.3395 49.6364C44.3395 48.8807 44.2585 48.2372 44.0966 47.706C43.9375 47.1747 43.7074 46.7699 43.4062 46.4915C43.108 46.2131 42.7486 46.0739 42.3281 46.0739C41.6974 46.0739 41.2045 46.3849 40.8494 47.0071C40.4943 47.6264 40.3168 48.5028 40.3168 49.6364C40.3168 50.392 40.3963 51.0341 40.5554 51.5625C40.7145 52.0909 40.9432 52.4929 41.2415 52.7685C41.5426 53.044 41.9048 53.1818 42.3281 53.1818Z"
+                            fill="#011627"
+                          />
+                        </g>
+                        <defs>
+                          <filter
+                            id="filter0_d_1_252"
+                            x="-6"
+                            y="0"
+                            width="92"
+                            height="92"
+                            filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB"
+                          >
+                            <feFlood
+                              flood-opacity="0"
+                              result="BackgroundImageFix"
+                            />
+                            <feColorMatrix
+                              in="SourceAlpha"
+                              type="matrix"
+                              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                              result="hardAlpha"
+                            />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="13" />
+                            <feComposite in2="hardAlpha" operator="out" />
+                            <feColorMatrix
+                              type="matrix"
+                              values="0 0 0 0 0.436545 0 0 0 0 0.436917 0 0 0 0 0.445833 0 0 0 0.12 0"
+                            />
+                            <feBlend
+                              mode="normal"
+                              in2="BackgroundImageFix"
+                              result="effect1_dropShadow_1_252"
+                            />
+                            <feBlend
+                              mode="normal"
+                              in="SourceGraphic"
+                              in2="effect1_dropShadow_1_252"
+                              result="shape"
+                            />
+                          </filter>
+                        </defs>
+                      </svg>
+                      <span>
+                        <p style={{ height: "8px" }}>
+                          Meeting with the Manager
+                        </p>
+                        <p style={{ height: "8px" }}>9:00 am - 11:30 am</p>
+                      </span>
+                    </span>
+                    <svg
+                      style={{ marginTop: "10px" }}
+                      width="26"
+                      height="26"
+                      viewBox="0 0 26 26"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect width="26" height="26" rx="5" fill="#F5F6FA" />
+                      <path
+                        d="M13 11C11.9008 11 11 11.9008 11 13C11 14.0992 11.9008 15 13 15C14.0992 15 15 14.0992 15 13C15 11.9008 14.0992 11 13 11Z"
+                        fill="#8F8F8F"
+                      />
+                      <path
+                        d="M13 5C11.9008 5 11 5.90076 11 7C11 8.09924 11.9008 9 13 9C14.0992 9 15 8.09924 15 7C15 5.90076 14.0992 5 13 5Z"
+                        fill="#8F8F8F"
+                      />
+                      <path
+                        d="M13 17C11.9008 17 11 17.9008 11 19C11 20.0992 11.9008 21 13 21C14.0992 21 15 20.0992 15 19C15 17.9008 14.0992 17 13 17Z"
+                        fill="#8F8F8F"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </CardComponent>

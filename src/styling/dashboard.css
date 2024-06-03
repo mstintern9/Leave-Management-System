@@ -1,14 +1,13 @@
 .dashboard {
   height: 90.7vh;
-  margin-left: 32.1vh;
+  margin-left: 42.7vh;
+  margin-right: 9.1vh;
   display: flex;
   flex-direction: column;
-  gap: 2vh;
 }
 
 .title {
-  height: 12vh;
-  padding-top: 2vh;
+  height: 11vh;
 }
 .currentEmployees {
   height: 22vh;
@@ -25,20 +24,20 @@
 
 .presentEmployees {
   position: relative;
-  top: -63px;
-  left: 41px;
+  top: -69px;
+  left: 4px;
   width: 30vh;
 }
 .absentEmployees {
   position: relative;
-  top: -23px;
-  left: 41px;
+  top: -26px;
+  left: 8px;
 }
 
 .leaveEmployees {
   position: relative;
-  top: -23px;
-  left: 41px;
+  top: -28px;
+  left: 11px;
 }
 .calenderContainer {
   display: flex;
@@ -53,6 +52,7 @@
 .arrowIcons {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 12px;
 }
 
 .calenderDates {
@@ -67,25 +67,49 @@
   font-size: 21px;
   font-weight: 600;
   position: relative;
+  height: 17vh;
 }
 
 .calenderContainer {
   display: flex;
   flex-direction: column;
-
 }
 
-.activityTitle{
-    display: flex;
-    justify-content: space-between;
+.activityTitle {
+  display: flex;
+  justify-content: space-between;
 }
 
-.activitiesRow{
-    display: flex;
-    justify-content: space-between;
+.activitiesRow {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
 }
 
-.titleMeeting{
-    display: flex;
-    justify-content: space-between;
+.titleMeeting {
+  display: flex;
+  justify-content: space-between;
+}
+
+.meetingSpan {
+  display: flex;
+}
+.statusFeed{
+  background: rgb(215, 229, 255);
+  height: 26px;
+  width: 74px;
+  border-radius: 7px;
+  color: rgb(55, 125, 255);
+  text-align: center;
+  font-size: 13px;
+}
+
+.nameFeed{
+  height: 5px;
+   font-weight: 500;
+   font-size:13.8px;
+}
+
+.meetingRow{
+  height: 62px;
 }

@@ -41,6 +41,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin-left: 4vh;
 }
 
 .searchIcon {
@@ -72,7 +73,7 @@
 .secondForm{
     display: flex;
     gap: 3vh;
-    margin-left: 24vh;
+    margin-left: 21vh;
 }
 
 .informationIcon{
