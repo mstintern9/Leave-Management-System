@@ -1,0 +1,47 @@
+.attendance{
+    margin-left: 42.7vh;
+    margin-right: 12vh;
+    height: 98.2vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.firstContainer{
+    padding-top: 3.5vh;
+    flex: 1;
+}
+
+.secondContainer{
+    flex: 0.5;
+}
+
+.firstChartContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.secondChartContainer{
+    height: 39vh;
+    margin-top: 8px;
+}
+.attendanceTitle{
+    display: flex;
+    justify-content: space-between;
+    height: 5vh;
+}
+
+.filterContainer{
+    display: flex;
+}
+.attendanceTable{
+    height: 28vh;
+    width: 130vh;
+}
+
+.status-present {
+    background-color: #36B95B; 
+  }
+  
+  .status-absent {
+    background-color: #B93636; 
+  }

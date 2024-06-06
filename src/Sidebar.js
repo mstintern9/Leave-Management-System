@@ -44,7 +44,7 @@ const Sidebar = () => {
   };
 
   return (
-    <Drawer variant="permanent">
+    <Drawer variant="permanent" >
       <Divider />
 
       <List className="list">

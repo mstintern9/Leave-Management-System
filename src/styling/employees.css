@@ -1,23 +1,62 @@
-.employees{
-    height: 90.7vh;
-  margin-left: 37.7vh;
+.employees {
+  height: 90.7vh;
+  margin-left: 42.7vh;
   margin-right: 9.1vh;
   display: flex;
   flex-direction: column;
-  border: 1px solid aqua;
+  gap: 56px;
 }
 
-.addEmployee{
-    background: #2379CC;
-    width: 117px;
-    height: 37px;
-    padding: 10px;
-    color: #FBFBFB;
-    border-radius: 10px;
-    border: none;
+.addEmployee {
+  background: #2379cc;
+  width: 117px;
+  height: 37px;
+  padding: 10px;
+  color: #fbfbfb;
+  border-radius: 10px;
+  border: none;
 }
 
-.firstRow{
+.addEmployee:hover {
+  background-color: #237accb5;
+  cursor: pointer;
+}
+
+.firstRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15vh;
+  margin-right: 4.9vh;
+}
+
+.MuiInputBase-root {
+  height: 31px;
+}
+.employeeImage {
+  border-radius: 77vh;
+  height: 5vh;
+  width: 5vh;
+}
+
+.employeeTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2vh;
+  height: 81px;
+}
+
+.employeeInformation {
+  display: flex;
+  height: 16vh;
+  flex-direction: column;
+}
+.informationRow{
+    height:13px;
     display: flex;
-    justify-content: space-between;
+    gap: 14px;
+    font-size: 13.7px;
+    padding-top: 2px;
 }
+
+

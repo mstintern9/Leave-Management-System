@@ -1,0 +1,31 @@
+.login{
+    height: 80vh;
+}
+
+.loginTitle{
+    display: flex;
+    color: rgb(0, 128, 252);
+    font-size: 3.2vh;
+    padding-left: 0vh;
+    width: 92%;
+    font-weight: 700;
+    justify-content: center;
+    color:"rgba(0, 128, 252, 1)";
+}
+.loginForm{
+    background: aliceblue;
+    margin-top: 4.3vh;
+    height: 51vh;
+}
+
+.form{
+    margin-top: 4vh;
+}
+
+.imageLogo{
+    height: 72px;
+    width: 83px;
+    border: 0.5px solid #dee2e6;
+    padding: 9px;
+    border-radius: 68px;
+}

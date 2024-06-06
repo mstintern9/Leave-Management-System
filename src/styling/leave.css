@@ -1,0 +1,65 @@
+.leave {
+  margin-left: 42.7vh;
+  margin-right: 12vh;
+  height: 90.7vh;
+}
+
+.leaveRow {
+  display: flex;
+  margin-top: 39px;
+  justify-content: space-between;
+  margin-left: -3vh;
+}
+
+.applyLeave {
+  background: #2379cc;
+  width: 117px;
+  height: 37px;
+  padding: 10px;
+  color: #fbfbfb;
+  border-radius: 10px;
+  border: none;
+  margin-top: 6px;
+}
+
+.applyLeave:hover {
+  background-color: #237accb5;
+  cursor: pointer;
+}
+
+.leaveTable{
+    height: 63vh;
+    margin-left: -3vh;
+}
+
+.status-cell {
+  font-weight: 500;
+  color: #FBFBFB;
+  padding: 6px;
+  border-radius: 7px;
+}
+
+.status-approved {
+  background-color: #36B95B; 
+}
+
+.status-rejected {
+  background-color: #B93636; 
+}
+
+.header-cell{
+  color: #011627;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+ .custom-row{
+  color: #979FA6;
+  font-size: 14px;
+}
+.note-cell{
+   background-color: #F1F1F1;
+   padding: 8px;
+   padding-right: 4vh;
+  border-radius: 7px;
+}

@@ -1,10 +1,13 @@
-import './App.css';
-import Navbar from './Navbar';
-import Sidebar from './Sidebar';
-import routes from './modules/AppRoutes';
-import { Routes,Route } from 'react-router-dom';
+import React from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
+import routes from "./modules/AppRoutes";
+import "./App.css";
 
 function App() {
+  const location = useLocation();
+
   const AppRoutes = () => (
     <Routes>
       {routes.map(({ path, element }, index) => (
@@ -12,10 +15,12 @@ function App() {
       ))}
     </Routes>
   );
+  const isLoginPage = location.pathname === "/login";
+
   return (
     <>
-    <Navbar />
-    <Sidebar />
+      {!isLoginPage && <Navbar />}
+      {!isLoginPage && <Sidebar />}
       <AppRoutes />
     </>
   );
