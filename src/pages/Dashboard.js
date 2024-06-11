@@ -2,8 +2,19 @@ import React from "react";
 import "../styling/dashboard.css";
 import CardComponent from "../components/cardComponent";
 import { Grid, Box } from "@mui/material";
+import api from "../modules/Axios";
 
 export default function Dashboard() {
+  const getCalendarData = async () => {
+    try {
+      const response = await api.get("/LeaveRequests/GetClanderData");
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error fetching calendar data:", error);
+    }
+  };
+
+  getCalendarData();
   return (
     <div className="dashboard">
       <div className="title">
@@ -715,14 +726,14 @@ export default function Dashboard() {
                       border: "1px solid #F0F0F0",
                       padding: "3px 6px 5px 8px",
                       height: "3vh",
-                      borderRadius:"10px"
+                      borderRadius: "10px",
                     }}
                   >
                     <p
                       style={{
                         color: "#333333",
                         fontSize: "11.6px",
-                        paddingBottom:"-4px",
+                        paddingBottom: "-4px",
                         fontWeight: "700",
                       }}
                     >
