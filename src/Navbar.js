@@ -4,20 +4,12 @@ import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import TextsmsOutlinedIcon from "@mui/icons-material/TextsmsOutlined";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
+import AppBar from '@mui/material/AppBar';
 
 export default function Navbar() {
   return (
-    <div className="navbar">
+    <AppBar sx={{background:"#fbfbfb",boxShadow:"none"}} >
       <div className="firstForm">
-        <p className="firstParagraph">
-          {" "}
-          <img
-            style={{ height: "43px", width: "53px" }}
-            className="imageLogo"
-            src="	https://lms.mikrostartech.com/static/media/login_logo.1ed5c701cd708e1e8b66.png"
-            alt=""
-          />
-        </p>
         <div className="searchContainer">
           <SearchIcon className="searchIcon" />
           <input className="searchBar" type="text" placeholder="Search" />
@@ -60,6 +52,6 @@ export default function Navbar() {
           </span>
         </div>
       </div>
-    </div>
+    </AppBar>
   );
 }

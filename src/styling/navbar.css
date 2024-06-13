@@ -37,7 +37,8 @@
 
 .firstForm {
   display: flex;
-  gap: 21.6vh;
+  gap: 6vh;
+  margin-left: 28vh;
 }
 
 .searchContainer {
@@ -51,7 +52,7 @@
   position: absolute;
   left: 13px;
   color: #888;
-  bottom: 27px;
+  bottom: 19px;
 }
 
 .searchBar::placeholder {

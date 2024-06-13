@@ -46,13 +46,18 @@ const Sidebar = () => {
   return (
     <Drawer variant="permanent" >
       <Divider />
-
       <List className="list">
-        <div style={{marginTop: "-4vh"}} >
+       
+        <img
+            style={{ height: "4vh", width: "5vh" }}
+            className="imageLogo"
+            src="	https://lms.mikrostartech.com/static/media/login_logo.1ed5c701cd708e1e8b66.png"
+            alt=""
+          />
         {sidebarItems.map((item, index) => {
           if (item.caption) {
             return (
-              <ListItem key={index} disablePadding sx={{ display: "block", paddingLeft: "4vh", paddingTop: "10.4vh" }}>
+              <ListItem key={index} disablePadding sx={{ display: "block" }}>
                 <ListItemText primary={item.caption} className="caption" />
               </ListItem>
             );
@@ -95,7 +100,7 @@ const Sidebar = () => {
             );
           }
         })}
-        </div>
+        
         <span className="sideBarBottom">
           <p style={{ marginLeft: "-1.5vh", color: "#6C7882", fontSize: "12px" }}>Account</p>
           <p className="drawerParagraph"> <Person2OutlinedIcon />Profile</p>  
