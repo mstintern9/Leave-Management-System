@@ -4,17 +4,18 @@ import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import TextsmsOutlinedIcon from "@mui/icons-material/TextsmsOutlined";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
-import AppBar from '@mui/material/AppBar';
+import AppBar from "@mui/material/AppBar";
+import { Grid } from "@mui/material";
 
 export default function Navbar() {
   return (
-    <AppBar sx={{background:"#fbfbfb",boxShadow:"none"}} >
-      <div className="firstForm">
-        <div className="searchContainer">
+    <AppBar sx={{ background: "#fbfbfb", boxShadow: "none",position:"fixed" }}>
+      <Grid style={{display:"flex" ,justifyContent:"space-evenly" }} >
+        <Grid md={6} sx={{display:"flex"}} >
           <SearchIcon className="searchIcon" />
           <input className="searchBar" type="text" placeholder="Search" />
-        </div>
-        <div className="secondForm">
+        </Grid>
+        <Grid md={6} sx={{display:"flex",gap:"2vh"}}>
           <span className="icons">
             <TextsmsOutlinedIcon />
             <NotificationsNoneIcon />
@@ -50,8 +51,8 @@ export default function Navbar() {
               <ExpandMoreOutlinedIcon sx={{ height: "6vh", width: "3vh" }} />
             </span>
           </span>
-        </div>
-      </div>
+        </Grid>
+      </Grid>
     </AppBar>
   );
 }

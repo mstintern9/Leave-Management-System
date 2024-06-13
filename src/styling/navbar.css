@@ -49,10 +49,10 @@
 }
 
 .searchIcon {
-  position: absolute;
-  left: 13px;
+  position: relative;
+  left: 3vh;
   color: #888;
-  bottom: 19px;
+  bottom: -3vh;
 }
 
 .searchBar::placeholder {

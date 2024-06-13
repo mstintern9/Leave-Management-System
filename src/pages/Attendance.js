@@ -19,6 +19,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { styled } from "@mui/material/styles";
+import Stack from '@mui/material/Stack';
 
 const data = [
   { name: "January", uv: 7000, pv: 2400, amt: 2400 },
@@ -63,42 +64,42 @@ const columns = [
   {
     field: "name",
     headerName: "Name",
-    width: 197,
+    width: 170,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "checkIn",
     headerName: "Check In",
-    width: 197,
+    width: 170,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "break",
     headerName: "Break",
-    width: 197,
+    width: 170,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "checkOut",
     headerName: "Check out",
-    width: 197,
+    width: 170,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "totalTime",
     headerName: "Total Time",
-    width: 197,
+    width: 170,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "status",
     headerName: "Status",
-    width: 197,
+    width: 170,
     headerClassName: "header-cell",
     editable: true,
     renderCell: (params) => {
@@ -111,7 +112,7 @@ const rows = [
   {
     id: 1,
     image:
-      "https://w7.pngwing.com/pngs/895/199/png-transparent-spider-man-heroes-download-with-transparent-background-free-thumbnail.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s",
     name: "Sara",
     checkIn: "9:00 AM",
     break: "1 hour",
@@ -122,7 +123,7 @@ const rows = [
   {
     id: 2,
     image:
-      "https://w7.pngwing.com/pngs/895/199/png-transparent-spider-man-heroes-download-with-transparent-background-free-thumbnail.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s",
     name: "Sara",
     checkIn: "9:00 AM",
     break: "1 hour",
@@ -133,7 +134,7 @@ const rows = [
   {
     id: 3,
     image:
-      "https://w7.pngwing.com/pngs/895/199/png-transparent-spider-man-heroes-download-with-transparent-background-free-thumbnail.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s",
     name: "Sara",
     checkIn: "9:00 AM",
     break: "1 hour",
@@ -144,7 +145,7 @@ const rows = [
   {
     id: 4,
     image:
-      "https://w7.pngwing.com/pngs/895/199/png-transparent-spider-man-heroes-download-with-transparent-background-free-thumbnail.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s",
     name: "Sara",
     checkIn: "9:00 AM",
     break: "1 hour",
@@ -197,15 +198,9 @@ export default function Attendance() {
               backgroundColor={"#F1F1F1"}
               sx={{ marginTop: "0vh", width: "17vh", boxShadow: "none" }}
             >
-              <span
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  fontWeight: "500",
-                }}
-              >
+             <Stack sx={{width:"18vh"}} >
                 Daily | Monthly | Anually
-              </span>
+             </Stack>
             </CardComponent>
           </div>
           <div className="secondChartContainer">
@@ -215,8 +210,8 @@ export default function Attendance() {
                 height={400}
                 data={data}
                 margin={{
-                  top: 10,
-                  right: 90,
+                  top: 2,
+                  right: 40,
                   left: 0,
                   bottom: 0,
                 }}
@@ -277,7 +272,7 @@ export default function Attendance() {
           }}
         >
           <div className="attendanceTitle">
-            <p style={{ fontSize: "21px", fontWeight: "600" }}>
+            <p style={{ fontSize: "21px", fontWeight: "600",alignSelf:"end" }}>
               Total Attendance
             </p>
             <div className="filterContainer">
@@ -302,7 +297,7 @@ export default function Attendance() {
                 </Select>
               </FormControl>
               <span className="searchContainer">
-                <SearchIcon className="searchIcon" sx={{ bottom: "24px" }} />
+                <SearchIcon className="searchIcon" sx={{ bottom: "1vh" }} />
                 <input
                   className="searchBar"
                   style={{ marginTop: "-2vh", width: "15.3vh" }}
@@ -312,7 +307,7 @@ export default function Attendance() {
               </span>
             </div>
           </div>
-          <Box sx={{ height: 289, width: 1400 }}>
+          <Box sx={{ height: "85%", width: "100%" }}>
             <DataGrid
               rows={rows}
               columns={columns}

@@ -1,14 +1,14 @@
 .leave {
   margin-left: 42.7vh;
   margin-right: 12vh;
-  height: 90.7vh;
+  height: 98.7vh;
+  overflow: hidden;
 }
 
 .leaveRow {
   display: flex;
   margin-top: 39px;
   justify-content: space-between;
-  margin-left: -3vh;
 }
 
 .applyLeave {
@@ -27,39 +27,38 @@
   cursor: pointer;
 }
 
-.leaveTable{
-    height: 63vh;
-    margin-left: -3vh;
+.leaveTable {
+  height: 63vh;
 }
 
 .status-cell {
   font-weight: 500;
-  color: #FBFBFB;
+  color: #fbfbfb;
   padding: 6px;
   border-radius: 7px;
 }
 
 .status-approved {
-  background-color: #36B95B; 
+  background-color: #36b95b;
 }
 
 .status-rejected {
-  background-color: #B93636; 
+  background-color: #b93636;
 }
 
-.header-cell{
+.header-cell {
   color: #011627;
   font-size: 18px;
   font-weight: 900;
 }
 
- .custom-row{
-  color: #979FA6;
+.custom-row {
+  color: #979fa6;
   font-size: 14px;
 }
-.note-cell{
-   background-color: #F1F1F1;
-   padding: 8px;
-   padding-right: 4vh;
+.note-cell {
+  background-color: #f1f1f1;
+  padding: 8px;
+  padding-right: 4vh;
   border-radius: 7px;
 }

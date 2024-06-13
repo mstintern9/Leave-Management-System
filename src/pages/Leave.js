@@ -3,39 +3,40 @@ import { Grid, Box } from "@mui/material";
 import CardComponent from "../components/cardComponent";
 import "../styling/leave.css";
 import { DataGrid } from "@mui/x-data-grid";
+import Stack from "@mui/material";
 
 const columns = [
   {
     field: "leaveType",
     headerName: "Leave Type",
-    width: 230,
+    width: 200,
     headerClassName: "header-cell",
   },
   {
     field: "duration",
     headerName: "Duration",
-    width: 230,
+    width: 200,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "dateFrom",
     headerName: "Date From",
-    width: 230,
+    width: 200,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "dateTo",
     headerName: "Date to",
-    width: 230,
+    width: 200,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "note",
     headerName: "Note",
-    width: 230,
+    width: 200,
     headerClassName: "header-cell",
     editable: true,
     renderCell: (params) => {
@@ -46,14 +47,14 @@ const columns = [
   {
     field: "addedOn",
     headerName: "Added on",
-    width: 230,
+    width: 200,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "status",
     headerName: "Status",
-    width: 150,
+    width: 200,
     headerClassName: "header-cell",
     editable: true,
     renderCell: (params) => {
@@ -229,7 +230,6 @@ export default function Leave() {
                 height: "11vh",
                 width: "30vh",
                 display: "flex",
-                gap: "1vh",
                 flexDirection: "column",
                 boxShadow: "none",
               }}
@@ -261,7 +261,6 @@ export default function Leave() {
                 height: "11vh",
                 width: "30vh",
                 display: "flex",
-                gap: "1vh",
                 flexDirection: "column",
                 boxShadow: "none",
               }}
@@ -293,7 +292,6 @@ export default function Leave() {
                 height: "11vh",
                 width: "30vh",
                 display: "flex",
-                gap: "1vh",
                 flexDirection: "column",
                 boxShadow: "none",
               }}
@@ -325,7 +323,6 @@ export default function Leave() {
                 height: "11vh",
                 width: "30vh",
                 display: "flex",
-                gap: "1vh",
                 flexDirection: "column",
                 boxShadow: "none",
               }}
@@ -367,7 +364,7 @@ export default function Leave() {
             paddingRight: "22px",
           }}
         >
-          <Box sx={{ height: 656, width: 1560 }}>
+          <Box sx={{ height: "100%", width: "100%" }}>
             <DataGrid
               rows={rows}
               columns={columns}
