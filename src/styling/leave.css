@@ -64,6 +64,7 @@
 }
 .grid-row{
   display: flex;
+  gap: 2vh;
 }
 
 @media (max-width: 1840px){

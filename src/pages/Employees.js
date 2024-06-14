@@ -59,7 +59,7 @@ export default function Employees() {
         </FormControl>
       </div>
       <Box>
-        <Grid sx={{display:"flex",flexDirection:"column" ,height: "92vh"}}  >
+        <Grid sx={{display:"flex",flexDirection:"column" ,height: "92vh",gap:"2vh"}}  >
           <Grid className="grid-row">
             <Grid item md={2.4}>
               <CardComponent
