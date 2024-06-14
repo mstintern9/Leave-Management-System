@@ -59,4 +59,13 @@
     padding-top: 2px;
 }
 
+.grid-row{
+  display: flex;
+}
 
+@media (max-width: 1550px){
+.grid-row{
+  display: flex;
+}
+
+}

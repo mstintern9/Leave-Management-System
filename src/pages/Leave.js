@@ -3,7 +3,6 @@ import { Grid, Box } from "@mui/material";
 import CardComponent from "../components/cardComponent";
 import "../styling/leave.css";
 import { DataGrid } from "@mui/x-data-grid";
-import Stack from "@mui/material";
 
 const columns = [
   {
@@ -223,6 +222,8 @@ export default function Leave() {
     <div className="leave">
       <Box>
         <Grid sx={{ height: "24vh" }} container>
+          <Grid className="grid-row"   >
+          </Grid>
           <Grid item md={3}>
             <CardComponent
               sx={{

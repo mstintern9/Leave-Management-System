@@ -18,24 +18,19 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <div className="title">
-        <p
-          style={{
-            color: "#2379CC",
-            fontSize: "20px",
-            fontWeight: 500,
-            paddingTop: "1vh",
-          }}
-        >
+        <p className="user">
           Welcome Test User!
         </p>
         <p style={{ color: "#979FA6", fontWeight: 500, fontSize: "16px" }}>
           Dashboard
         </p>
       </div>
-      <Box>
-        <Grid container rowGap={1}>
+      <Box className="Box" >
+        <Grid container rowGap={1} >
+          <Grid columnGap={2} className="gridRow" sx={{display:"flex"}} >
+            
           <Grid item md={4}>
-            <CardComponent
+            <CardComponent className="responsive-card"
               sx={{
                 display: "flex",
                 marginTop: "0vh",
@@ -173,7 +168,7 @@ export default function Dashboard() {
                   5
                 </p>
               </Grid>
-              <Grid md={6}>
+              <Grid md={6} >
                 <svg
                   style={{ paddingLeft: "13vh", paddingTop: "11vh" }}
                   width="72"
@@ -282,6 +277,10 @@ export default function Dashboard() {
               </Grid>
             </CardComponent>
           </Grid>
+          </Grid>
+
+          <Grid className="gridRow" columnGap={2} sx={{display:"flex"}} >
+         
           <Grid item md={8}>
             <CardComponent
               sx={{
@@ -622,6 +621,9 @@ export default function Dashboard() {
               </div>
             </CardComponent>
           </Grid>
+          </Grid>
+          <Grid className="gridRow" columnGap={2} sx={{display:"flex"}} >
+
           <Grid item md={6}>
             <CardComponent
               sx={{
@@ -1066,6 +1068,7 @@ export default function Dashboard() {
                 </div>
               </div>
             </CardComponent>
+          </Grid>
           </Grid>
         </Grid>
       </Box>

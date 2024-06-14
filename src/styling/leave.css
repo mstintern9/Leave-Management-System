@@ -62,3 +62,12 @@
   padding-right: 4vh;
   border-radius: 7px;
 }
+.grid-row{
+  display: flex;
+}
+
+@media (max-width: 1840px){
+  .grid-row{
+    flex-wrap: wrap;
+  }
+}

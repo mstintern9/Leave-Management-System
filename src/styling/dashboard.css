@@ -1,6 +1,5 @@
 .dashboard {
   height: 98.7vh;
-  overflow: hidden;
   margin-left: 42.7vh;
   margin-right: 9.1vh;
   display: flex;
@@ -112,7 +111,32 @@
    font-weight: 500;
    font-size:13.8px;
 }
+.user{
+  color: #2379CC;
+  font-size: 20px;
+  font-weight: 500;
+  padding-top: 1vh;
+}
 
 .meetingRow{
   height: 62px;
+}
+
+@media (max-width: 1860px){
+  .gridRow{
+    flex-wrap: wrap;
+    gap: 2vh;
+  }
+  .title {
+    height: 11vh;
+    margin-top: 7vh;
+  }
+  .user{
+    font-size: 14px;
+  }
+
+  .responsive-card{
+    height: 42vh;
+    width: 2vh;
+  }
 }
