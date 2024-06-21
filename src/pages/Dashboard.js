@@ -14,6 +14,7 @@ export default function Dashboard() {
     };
 
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
