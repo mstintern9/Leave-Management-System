@@ -2,7 +2,6 @@
   margin-left: 42.7vh;
   margin-right: 12vh;
   height: 98.7vh;
-  overflow: hidden;
 }
 
 .leaveRow {
@@ -28,7 +27,7 @@
 }
 
 .leaveTable {
-  height: 63vh;
+  height: 61vh;
 }
 
 .status-cell {
@@ -67,7 +66,7 @@
   gap: 2vh;
 }
 
-@media (max-width: 1840px){
+@media (max-width: 1850px){
   .grid-row{
     flex-wrap: wrap;
   }

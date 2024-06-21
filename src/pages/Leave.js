@@ -3,6 +3,7 @@ import { Grid, Box } from "@mui/material";
 import CardComponent from "../components/cardComponent";
 import "../styling/leave.css";
 import { DataGrid } from "@mui/x-data-grid";
+import { useState,useEffect } from "react";
 
 const columns = [
   {
@@ -218,13 +219,26 @@ const rows = [
 const getRowClassName = () => "custom-row";
 
 export default function Leave() {
+
+  const [gridMd, setGridMd] = useState(window.innerWidth < 1840 ? 12 : 3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setGridMd(window.innerWidth < 1800 ? 12 : 3);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div className="leave">
       <Box>
-        <Grid sx={{ height: "24vh" }} container>
+        <Grid container>
           <Grid className="grid-row"   >
           </Grid>
-          <Grid item md={3}>
+          <Grid item md={gridMd}>
             <CardComponent
               sx={{
                 marginTop: "13vh",
@@ -255,7 +269,7 @@ export default function Leave() {
               </p>
             </CardComponent>
           </Grid>
-          <Grid item md={3}>
+          <Grid item md={gridMd}>
             <CardComponent
               sx={{
                 marginTop: "13vh",
@@ -286,7 +300,7 @@ export default function Leave() {
               </p>
             </CardComponent>
           </Grid>
-          <Grid item md={3}>
+          <Grid item md={gridMd}>
             <CardComponent
               sx={{
                 marginTop: "13vh",
@@ -317,7 +331,7 @@ export default function Leave() {
               </p>
             </CardComponent>
           </Grid>
-          <Grid item md={3}>
+          <Grid item md={gridMd}>
             <CardComponent
               sx={{
                 marginTop: "13vh",
@@ -359,7 +373,7 @@ export default function Leave() {
           sx={{
             marginTop: "0.3vh",
             width: "98%",
-            height: "96%",
+            height: "92%",
             boxShadow: "none",
             paddingBottom: "36px",
             paddingRight: "22px",
