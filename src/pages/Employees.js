@@ -1,6 +1,6 @@
 import React from "react";
 import "../styling/employees.css";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -12,13 +12,14 @@ import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined
 import TodayOutlinedIcon from "@mui/icons-material/TodayOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
+import api from "../modules/Axios";
 
 export default function Employees() {
   const [age, setAge] = React.useState("");
 
   const [dimensions, setDimensions] = useState({
-    height: '26vh',
-    width: '22vh'
+    height: "26vh",
+    width: "22vh",
   });
 
   const handleChange = (event) => {
@@ -29,22 +30,22 @@ export default function Employees() {
     const updateDimensions = () => {
       if (window.innerHeight < 750) {
         setDimensions({
-          height: '40vh',
-          width: '29vh'
+          height: "40vh",
+          width: "29vh",
         });
       } else {
         setDimensions({
-          height: '26vh',
-          width: '22vh'
+          height: "26vh",
+          width: "22vh",
         });
       }
     };
 
-    window.addEventListener('resize', updateDimensions);
-    updateDimensions(); // Initial check
+    window.addEventListener("resize", updateDimensions);
+    updateDimensions();
 
     return () => {
-      window.removeEventListener('resize', updateDimensions);
+      window.removeEventListener("resize", updateDimensions);
     };
   }, []);
 
@@ -61,6 +62,17 @@ export default function Employees() {
     padding: theme.spacing(0.5, 2),
     fontSize: "0.875rem",
   }));
+
+  const getEmployeeData = async () => {
+    try {
+      const response = await api.get("/AuthUser/GetAllUsers");
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error fetching employee data:", error);
+    }
+  };
+
+  getEmployeeData();
 
   return (
     <div className="employees">
@@ -88,19 +100,26 @@ export default function Employees() {
         </FormControl>
       </div>
       <Box>
-        <Grid sx={{display:"flex",flexDirection:"column" ,height: "92vh",gap:"2vh"}}  >
+        <Grid
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: "92vh",
+            gap: "2vh",
+          }}
+        >
           <Grid className="grid-row">
             <Grid item md={2.4}>
-            <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+              <CardComponent
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -156,15 +175,15 @@ export default function Employees() {
             </Grid>
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -220,15 +239,15 @@ export default function Employees() {
             </Grid>
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -284,15 +303,15 @@ export default function Employees() {
             </Grid>
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -348,15 +367,15 @@ export default function Employees() {
             </Grid>
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -414,15 +433,15 @@ export default function Employees() {
           <Grid className="grid-row">
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -478,15 +497,15 @@ export default function Employees() {
             </Grid>
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -542,15 +561,15 @@ export default function Employees() {
             </Grid>
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -606,15 +625,15 @@ export default function Employees() {
             </Grid>
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -670,15 +689,15 @@ export default function Employees() {
             </Grid>
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -736,15 +755,15 @@ export default function Employees() {
           <Grid className="grid-row">
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -800,15 +819,15 @@ export default function Employees() {
             </Grid>
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -864,15 +883,15 @@ export default function Employees() {
             </Grid>
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -928,15 +947,15 @@ export default function Employees() {
             </Grid>
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
@@ -992,15 +1011,15 @@ export default function Employees() {
             </Grid>
             <Grid item md={2.4}>
               <CardComponent
-        sx={{
-          gap: "2.4vh",
-          display: "flex",
-          width: dimensions.width,
-          marginTop: "-1vh",
-          height: dimensions.height,
-          boxShadow: "none",
-        }}
-      >
+                sx={{
+                  gap: "2.4vh",
+                  display: "flex",
+                  width: dimensions.width,
+                  marginTop: "-1vh",
+                  height: dimensions.height,
+                  boxShadow: "none",
+                }}
+              >
                 <Grid md={11}>
                   <span className="employeeTitle">
                     <img
