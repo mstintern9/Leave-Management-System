@@ -7,19 +7,6 @@ import api from "../modules/Axios";
 import Stack from "@mui/material/Stack";
 
 export default function Dashboard() {
-  const [gridMd, setGridMd] = useState(window.innerWidth < 1800 ? 12 : 4);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setGridMd(window.innerWidth < 1800 ? 12 : 4);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const getCalendarData = async () => {
     try {
@@ -42,7 +29,7 @@ export default function Dashboard() {
       <Box className="Box">
         <Grid container rowGap={1}>
           <Grid columnGap={2} className="gridRow" sx={{ display: "flex" }}>
-            <Grid item md={gridMd}>
+            <Grid item lg={6} sm={12} md={12}>
               <CardComponent
                 className="responsive-card"
                 sx={{
@@ -107,8 +94,6 @@ export default function Dashboard() {
                 </Grid>
                 <Grid md={6}>
                   <Stack>
-
-
                   <svg
                     style={{ paddingLeft: "13vh", paddingTop: "6vh" }}
                     width="64"
@@ -138,7 +123,7 @@ export default function Dashboard() {
                 </Grid>
               </CardComponent>
             </Grid>
-            <Grid item md={gridMd}>
+            <Grid item lg={6} sm={12} md={12}>
               <CardComponent
                 sx={{
                   display: "flex",
@@ -217,7 +202,7 @@ export default function Dashboard() {
                 </Grid>
               </CardComponent>
             </Grid>
-            <Grid item md={gridMd}>
+            <Grid item lg={6} sm={12} md={12}>
               <CardComponent
                 sx={{
                   display: "flex",
