@@ -1,10 +1,8 @@
 import React from "react";
-import { useState,useEffect } from "react";
 import "../styling/dashboard.css";
 import CardComponent from "../components/cardComponent";
 import { Grid, Box } from "@mui/material";
 import api from "../modules/Axios";
-import Stack from "@mui/material/Stack";
 
 export default function Dashboard() {
 
@@ -93,7 +91,7 @@ export default function Dashboard() {
                   </p>
                 </Grid>
                 <Grid md={6}>
-                  <Stack>
+                 
                   <svg
                     style={{ paddingLeft: "13vh", paddingTop: "6vh" }}
                     width="64"
@@ -119,7 +117,7 @@ export default function Dashboard() {
                       fill="#E6F2FF"
                     />
                   </svg>
-                  </Stack>
+                  
                 </Grid>
               </CardComponent>
             </Grid>
