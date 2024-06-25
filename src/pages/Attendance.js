@@ -180,41 +180,45 @@ export default function Attendance() {
   };
 
   const transformAttendanceData = (attendanceData) => {
-    // Define your ranges
-    const ranges = [
-      { name: "1 - 5", minValue: 1, maxValue: 5 },
-      { name: "6 - 10", minValue: 6, maxValue: 10 },
-      { name: "11 - 15", minValue: 11, maxValue: 15 },
-      { name: "16 - 20", minValue: 16, maxValue: 20 },
-      { name: "21 - 25", minValue: 21, maxValue: 25 },
-      { name: "26 - 30", minValue: 26, maxValue: 30 },
-    ];
-
     // Initialize an array to hold the transformed data
     const transformedData = [];
-
-    // Loop through each range
-    ranges.forEach((range) => {
-      // Filter attendance data within the current range
-      const filteredData = attendanceData.filter((item) => {
-        const timeSpent = parseInt(item.timeSpent.split("h")[0], 10);
-        return timeSpent >= range.minValue && timeSpent <= range.maxValue;
+  
+    // Loop through each day of the month
+    for (let day = 1; day <= 30; day++) {
+      // Find data for the current day
+      const dayData = attendanceData.find(item => {
+        const itemDate = new Date(item.start);
+        return itemDate.getDate() === day; // Compare day of the month
       });
-
-      // Calculate total time spent in this range
-      const totalTimeSpent = filteredData.reduce((acc, curr) => {
-        return acc + parseInt(curr.timeSpent.split("h")[0], 10);
-      }, 0);
-
-      // Push an object with the range name and total time spent to the transformed data array
-      transformedData.push({
-        name: range.name,
-        timeSpent: totalTimeSpent,
-      });
-    });
-
+  
+      // Log the dayData for debugging
+      console.log(`Day ${day} data:`, dayData);
+  
+      // If data is found for the day, add it to the transformed data
+      if (dayData) {
+        // Extract hours from timeSpent string
+        const hours = parseInt(dayData.timeSpent.split("h")[0], 10);
+        transformedData.push({
+          name: `${day}`, // Name can be the day number
+          timeSpent: hours
+        });
+      } else {
+        // If no data is found for the day, add a placeholder entry
+        transformedData.push({
+          name: `${day}`,
+          timeSpent: 0 // or any default value
+        });
+      }
+    }
+  
+    // Log the transformed data for debugging
+    console.log('Transformed Data:', transformedData);
+  
     return transformedData;
   };
+  
+  
+  
 
   const chartData = transformAttendanceData(attendanceData);
 
