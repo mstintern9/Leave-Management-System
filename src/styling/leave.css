@@ -44,6 +44,9 @@
 .status-rejected {
   background-color: #b93636;
 }
+.status-pending {
+  background-color: rgba(235, 235, 18, 0.821);
+}
 
 .header-cell {
   color: #011627;

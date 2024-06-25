@@ -3,40 +3,41 @@ import { Grid, Box } from "@mui/material";
 import CardComponent from "../components/cardComponent";
 import "../styling/leave.css";
 import { DataGrid } from "@mui/x-data-grid";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import api from "../modules/Axios";
 
 const columns = [
   {
-    field: "leaveType",
-    headerName: "Leave Type",
+    field: "name",
+    headerName: "Name",
     width: 200,
     headerClassName: "header-cell",
   },
   {
-    field: "duration",
-    headerName: "Duration",
+    field: "days",
+    headerName: "Days",
     width: 200,
     headerClassName: "header-cell",
     editable: true,
   },
   {
-    field: "dateFrom",
+    field: "from",
     headerName: "Date From",
     width: 200,
     headerClassName: "header-cell",
     editable: true,
   },
   {
-    field: "dateTo",
+    field: "to",
     headerName: "Date to",
     width: 200,
     headerClassName: "header-cell",
     editable: true,
   },
   {
-    field: "note",
-    headerName: "Note",
-    width: 200,
+    field: "reason",
+    headerName: "Reason",
+    width: 280,
     headerClassName: "header-cell",
     editable: true,
     renderCell: (params) => {
@@ -45,182 +46,41 @@ const columns = [
     },
   },
   {
-    field: "addedOn",
-    headerName: "Added on",
-    width: 200,
-    headerClassName: "header-cell",
-    editable: true,
-  },
-  {
-    field: "status",
+    field: "Status",
     headerName: "Status",
     width: 200,
     headerClassName: "header-cell",
     editable: true,
     renderCell: (params) => {
-      const className = `status-cell status-${params.value.toLowerCase()}`;
-      return <span className={className}>{params.value}</span>;
-    },
+      const value = params.value || ""; 
+      const className = `status-cell status-${value.toLowerCase()}`;
+      return <span className={className}>{value}</span>;
+    },    
   },
 ];
 
-const rows = [
-  {
-    id: 1,
-    leaveType: "Sick Leave",
-    duration: "2 days",
-    dateFrom: "2023-01-15",
-    dateTo: "2023-01-17",
-    note: "Flu",
-    addedOn: "2023-01-14",
-    status: "Approved",
-  },
-  {
-    id: 2,
-    leaveType: "Vacation",
-    duration: "1 week",
-    dateFrom: "2023-02-10",
-    dateTo: "2023-02-17",
-    note: "Family trip",
-    addedOn: "2023-02-05",
-    status: "Approved",
-  },
-  {
-    id: 3,
-    leaveType: "Sick Leave",
-    duration: "1 day",
-    dateFrom: "2023-03-05",
-    dateTo: "2023-03-06",
-    note: "Doctor appointment",
-    addedOn: "2023-03-04",
-    status: "Rejected",
-  },
-  {
-    id: 4,
-    leaveType: "Personal Leave",
-    duration: "3 days",
-    dateFrom: "2023-04-12",
-    dateTo: "2023-04-15",
-    note: "Moving",
-    addedOn: "2023-04-10",
-    status: "Approved",
-  },
-  {
-    id: 5,
-    leaveType: "Vacation",
-    duration: "2 weeks",
-    dateFrom: "2023-05-01",
-    dateTo: "2023-05-15",
-    note: "Europe trip",
-    addedOn: "2023-04-20",
-    status: "Approved",
-  },
-  {
-    id: 6,
-    leaveType: "Sick Leave",
-    duration: "4 days",
-    dateFrom: "2023-06-01",
-    dateTo: "2023-06-05",
-    note: "Recovery from surgery",
-    addedOn: "2023-05-30",
-    status: "Rejected",
-  },
-  {
-    id: 7,
-    leaveType: "Maternity Leave",
-    duration: "3 months",
-    dateFrom: "2023-07-01",
-    dateTo: "2023-09-30",
-    note: "Childbirth",
-    addedOn: "2023-06-15",
-    status: "Approved",
-  },
-  {
-    id: 8,
-    leaveType: "Sick Leave",
-    duration: "1 week",
-    dateFrom: "2023-10-10",
-    dateTo: "2023-10-17",
-    note: "Covid-19",
-    addedOn: "2023-10-08",
-    status: "Approved",
-  },
-  {
-    id: 9,
-    leaveType: "Vacation",
-    duration: "2 weeks",
-    dateFrom: "2023-11-20",
-    dateTo: "2023-12-04",
-    note: "Honeymoon",
-    addedOn: "2023-11-10",
-    status: "Approved",
-  },
-  {
-    id: 10,
-    leaveType: "Vacation",
-    duration: "2 weeks",
-    dateFrom: "2023-11-20",
-    dateTo: "2023-12-04",
-    note: "Honeymoon",
-    addedOn: "2023-11-10",
-    status: "Approved",
-  },
-  {
-    id: 11,
-    leaveType: "Sick Leave",
-    duration: "4 days",
-    dateFrom: "2023-06-01",
-    dateTo: "2023-06-05",
-    note: "Recovery from surgery",
-    addedOn: "2023-05-30",
-    status: "Rejected",
-  },
-  {
-    id: 12,
-    leaveType: "Maternity Leave",
-    duration: "3 months",
-    dateFrom: "2023-07-01",
-    dateTo: "2023-09-30",
-    note: "Childbirth",
-    addedOn: "2023-06-15",
-    status: "Approved",
-  },
-  {
-    id: 13,
-    leaveType: "Sick Leave",
-    duration: "1 week",
-    dateFrom: "2023-10-10",
-    dateTo: "2023-10-17",
-    note: "Covid-19",
-    addedOn: "2023-10-08",
-    status: "Approved",
-  },
-  {
-    id: 14,
-    leaveType: "Vacation",
-    duration: "2 weeks",
-    dateFrom: "2023-11-20",
-    dateTo: "2023-12-04",
-    note: "Honeymoon",
-    addedOn: "2023-11-10",
-    status: "Approved",
-  },
-  {
-    id: 15,
-    leaveType: "Vacation",
-    duration: "2 weeks",
-    dateFrom: "2023-11-20",
-    dateTo: "2023-12-04",
-    note: "Honeymoon",
-    addedOn: "2023-11-10",
-    status: "Approved",
-  },
-];
 const getRowClassName = () => "custom-row";
 
 export default function Leave() {
-
   const [gridMd, setGridMd] = useState(window.innerWidth < 1840 ? 12 : 3);
+  const [leave, setLeave] = useState([]);
+  const [approvedLeaves, setApprovedLeaves] = useState(0);
+  const [pendingLeaves, setPendingLeaves] = useState(0);
+  const [rejectedLeaves, setRejectedLeaves] = useState(0);
+  const [totalLeaves, setTotalLeaves] = useState(0);
+
+  useEffect(() => {
+    const approved = leave.filter((leave) => leave.Status === "Approved").length;
+    const pending = leave.filter((leave) => leave.Status === "Pending").length;
+    const rejected = leave.filter((leave) => leave.Status === "Rejected").length;
+    const total = leave.length;
+
+    setApprovedLeaves(approved);
+    setPendingLeaves(pending);
+    setRejectedLeaves(rejected);
+    setTotalLeaves(total);
+  }, [leave]);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -232,12 +92,27 @@ export default function Leave() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    const getLeaveData = async () => {
+      try {
+        const response = await api.get("/LeaveRequests/GetMyLeaves");
+        console.log(response.data);
+        setLeave(response.data); 
+      } catch (error) {
+        console.error("Error fetching leave data:", error);
+      }
+    };
+
+    getLeaveData();
+  }, []);
+  const getRowId = (row) => row.ID;
+
+
   return (
     <div className="leave">
       <Box>
         <Grid container>
-          <Grid className="grid-row"   >
-          </Grid>
           <Grid item md={gridMd}>
             <CardComponent
               sx={{
@@ -265,7 +140,7 @@ export default function Leave() {
                   color: "#2379CC",
                 }}
               >
-                14
+                {totalLeaves}
               </p>
             </CardComponent>
           </Grid>
@@ -287,7 +162,7 @@ export default function Leave() {
                   marginTop: "8px",
                 }}
               >
-                Availed Leaves
+                Approved Leaves
               </p>
               <p
                 style={{
@@ -296,7 +171,7 @@ export default function Leave() {
                   color: "#1ED230",
                 }}
               >
-                5
+                {approvedLeaves}
               </p>
             </CardComponent>
           </Grid>
@@ -318,7 +193,7 @@ export default function Leave() {
                   marginTop: "8px",
                 }}
               >
-                Health Leaves
+                Pending Leaves
               </p>
               <p
                 style={{
@@ -327,7 +202,7 @@ export default function Leave() {
                   color: "#2379CC",
                 }}
               >
-                2
+                {pendingLeaves}
               </p>
             </CardComponent>
           </Grid>
@@ -349,7 +224,7 @@ export default function Leave() {
                   marginTop: "8px",
                 }}
               >
-                Other Leaves
+                Rejected Leaves
               </p>
               <p
                 style={{
@@ -358,7 +233,7 @@ export default function Leave() {
                   color: "#2379CC",
                 }}
               >
-                3
+                {rejectedLeaves}
               </p>
             </CardComponent>
           </Grid>
@@ -380,9 +255,11 @@ export default function Leave() {
           }}
         >
           <Box sx={{ height: "100%", width: "100%" }}>
+           
             <DataGrid
-              rows={rows}
+              rows={leave}
               columns={columns}
+              getRowId={getRowId} 
               initialState={{
                 pagination: {
                   paginationModel: {

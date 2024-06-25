@@ -4,6 +4,8 @@ import CardComponent from "../components/cardComponent";
 import SearchIcon from "@mui/icons-material/Search";
 import { Box } from "@mui/material";
 import { InputLabel } from "@mui/material";
+import { useEffect, useState } from "react";
+import api from "../modules/Axios";
 import {
   AreaChart,
   Area,
@@ -19,20 +21,16 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { styled } from "@mui/material/styles";
-import Stack from '@mui/material/Stack';
+import Stack from "@mui/material/Stack";
 
 const data = [
-  { name: "January", uv: 7000, pv: 2400, amt: 2400 },
-  { name: "February", uv: 6500, pv: 1398, amt: 2210 },
-  { name: "March", uv: 5400, pv: 9800, amt: 2290 },
-  { name: "April", uv: 3580, pv: 3908, amt: 2000 },
-  { name: "May", uv: 6590, pv: 4800, amt: 2181 },
-  { name: "June", uv: 4600, pv: 3800, amt: 2500 },
-  { name: "August", uv: 5000, pv: 4300, amt: 2100 },
-  { name: "September", uv: 3590, pv: 4300, amt: 2100 },
-  { name: "October", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "November", uv: 4490, pv: 4300, amt: 2100 },
-  { name: "December", uv: 5690, pv: 4300, amt: 2100 },
+  { name: "1 - 5", uv: 7000, pv: 2400, amt: 2400 },
+  { name: "6 - 10", uv: 6500, pv: 1398, amt: 2210 },
+  { name: "11 - 15", uv: 5400, pv: 9800, amt: 2290 },
+  { name: "16 - 20", uv: 3580, pv: 3908, amt: 2000 },
+  { name: "21 - 25", uv: 6590, pv: 4800, amt: 2181 },
+  { name: "26 - 30", uv: 6590, pv: 4800, amt: 2181 },
+ 
 ];
 
 const yAxisLabels = [
@@ -48,110 +46,52 @@ const yAxisLabels = [
 ];
 
 const columns = [
-  {
-    field: "image",
-    headerName: "Image",
-    width: 197,
-    headerClassName: "header-cell",
-    renderCell: (params) => (
-      <img
-        src={params.value}
-        alt="Profile"
-        style={{ width: 35, height: 37, borderRadius: "50%", padding: "7px" }}
-      />
-    ),
-  },
+  
   {
     field: "name",
     headerName: "Name",
-    width: 170,
+    width: 220,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "checkIn",
     headerName: "Check In",
-    width: 170,
+    width: 220,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "break",
     headerName: "Break",
-    width: 170,
+    width: 220,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "checkOut",
     headerName: "Check out",
-    width: 170,
+    width: 220,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "totalTime",
     headerName: "Total Time",
-    width: 170,
+    width: 220,
     headerClassName: "header-cell",
     editable: true,
   },
   {
     field: "status",
     headerName: "Status",
-    width: 170,
+    width: 220,
     headerClassName: "header-cell",
     editable: true,
     renderCell: (params) => {
-      const className = `status-cell status-${params.value.toLowerCase()}`;
+      const className = `status-${params.value.replace(/ /g, '-').toLowerCase()}`;
       return <span className={className}>{params.value}</span>;
     },
-  },
-];
-const rows = [
-  {
-    id: 1,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s",
-    name: "Sara",
-    checkIn: "9:00 AM",
-    break: "1 hour",
-    checkOut: "---",
-    totalTime: "9 hours",
-    status: "Present",
-  },
-  {
-    id: 2,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s",
-    name: "Sara",
-    checkIn: "9:00 AM",
-    break: "1 hour",
-    checkOut: "---",
-    totalTime: "9 hours",
-    status: "Present",
-  },
-  {
-    id: 3,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s",
-    name: "Sara",
-    checkIn: "9:00 AM",
-    break: "1 hour",
-    checkOut: "---",
-    totalTime: "9 hours",
-    status: "Present",
-  },
-  {
-    id: 4,
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s",
-    name: "Sara",
-    checkIn: "9:00 AM",
-    break: "1 hour",
-    checkOut: "---",
-    totalTime: "9 hours",
-    status: "Present",
   },
 ];
 
@@ -159,10 +99,86 @@ const getRowClassName = () => "custom-row";
 
 export default function Attendance() {
   const [age, setAge] = React.useState("");
-
+  const [selectedMonth, setSelectedMonth] = useState("");
+  const [selectedYear, setSelectedYear] = useState("");
+  const [machineName, setMachineName] = useState("");
+  const [attendanceData,setAttendanceData]=useState([]);
+  
   const handleChange = (event) => {
     setAge(event.target.value);
   };
+  
+  const handleMonthChange = (event) => {
+    setSelectedMonth(event.target.value);
+  };
+  
+  const handleYearChange = (event) => {
+    setSelectedYear(event.target.value);
+  };
+  
+  useEffect(() => {
+    const machineNameFromStorage = localStorage.getItem("machine_name");
+    setMachineName(machineNameFromStorage);
+  }, []);
+
+  const currentYear = new Date().getFullYear();
+  const years = Array.from({ length: 3 }, (_, i) => currentYear - i);
+  
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const getStatus = (timeSpent) => {
+    const hours = parseInt(timeSpent.split('h')[0], 10); // Extract hours as an integer
+    if (hours >= 9) return "Full Day";
+    if (hours >= 7) return "Short Day";
+    if (hours >= 5) return "Half Day";
+    return "Leave";
+  };
+  
+  useEffect(()=>{
+    const getAttendanceData = async () => {
+      try {
+        const requestBody = {
+          employeeName: machineName, 
+          month: selectedMonth, 
+          year: selectedYear, 
+        };
+        
+        const response = await api.post(
+          "/AttendanceRecords/GetEmployeesAttendance",
+          requestBody
+        );
+        console.log(response.data);
+        setAttendanceData(response.data)
+      } catch (error) {
+        console.error("Error fetching attendance data:", error);
+      }
+    };
+    getAttendanceData();
+  },[selectedYear])
+  
+  
+  const rows = attendanceData.map((item, index) => ({
+      id: index + 1,
+      name: item.machineName,
+      checkIn: `${item.from} AM`,
+      break: "1 hour", 
+      checkOut: `${item.to} PM`,
+      totalTime: item.timeSpent,
+      status: getStatus(item.timeSpent), 
+    }));
 
   const menuProps = {
     PaperProps: {
@@ -196,15 +212,53 @@ export default function Attendance() {
             </p>
             <CardComponent
               backgroundColor={"#F1F1F1"}
-              sx={{ marginTop: "0vh", width: "17vh", boxShadow: "none" }}
+              sx={{
+                display: "flex",
+                marginTop: "0vh",
+                width: "14vh",
+                boxShadow: "none",
+              }}
             >
-             <Stack sx={{width:"18vh"}} >
-                Daily | Monthly | Anually
-             </Stack>
+              <Stack sx={{ width: "18vh", display: "flex", gap: "0.4vh" }}>
+                <Select
+                  value={selectedMonth}
+                  onChange={handleMonthChange}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Month" }}
+                >
+                  <MenuItem value="" disabled>
+                    Select Month
+                  </MenuItem>
+                  {months.map((month, index) => (
+                    <MenuItem key={month} value={index + 1}>
+                      {month}
+                    </MenuItem>
+                  ))}
+                </Select>
+                <Select
+                  value={selectedYear}
+                  onChange={handleYearChange}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Year" }}
+                >
+                  <MenuItem value="" disabled>
+                    Select Year
+                  </MenuItem>
+                  {years.map((year) => (
+                    <MenuItem key={year} value={year}>
+                      {year}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </Stack>
             </CardComponent>
           </div>
           <div className="secondChartContainer">
-            <ResponsiveContainer width="97%" height="91%" style={{paddingTop:"2vh",marginLeft:"2vh"}}  >
+            <ResponsiveContainer
+              width="97%"
+              height="83%"
+              style={{ paddingTop: "2vh", marginLeft: "2vh" }}
+            >
               <AreaChart
                 width={500}
                 height={400}
@@ -272,7 +326,9 @@ export default function Attendance() {
           }}
         >
           <div className="attendanceTitle">
-            <p style={{ fontSize: "21px", fontWeight: "600",alignSelf:"end" }}>
+            <p
+              style={{ fontSize: "21px", fontWeight: "600", alignSelf: "end" }}
+            >
               Total Attendance
             </p>
             <div className="filterContainer">

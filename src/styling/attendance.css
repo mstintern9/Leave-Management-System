@@ -38,10 +38,30 @@
     width: 130vh;
 }
 
-.status-present {
-    background-color: #36B95B; 
-  }
-  
-  .status-absent {
-    background-color: #B93636; 
-  }
+.status-full-day {
+  background-color: rgba(9, 107, 9, 0.588);
+  color: white;
+  border-radius: 2vh;
+  padding: 0.5vh;
+}
+
+.status-short-day {
+  background-color: rgba(177, 177, 23, 0.68);
+  color: white;
+  border-radius: 2vh;
+  padding: 0.5vh;
+}
+
+.status-half-day {
+  background-color:rgba(89, 89, 225, 0.556);
+  color: white;
+  border-radius: 2vh;
+  padding: 0.5vh;
+}
+
+.status-leave{
+    background-color: rgba(191, 12, 12, 0.669);
+    color: white;
+    border-radius: 2vh;
+    padding: 0.5vh;
+}

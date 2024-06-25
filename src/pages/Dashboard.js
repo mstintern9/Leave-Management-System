@@ -3,19 +3,24 @@ import "../styling/dashboard.css";
 import CardComponent from "../components/cardComponent";
 import { Grid, Box } from "@mui/material";
 import api from "../modules/Axios";
+import { useEffect } from "react";
 
 export default function Dashboard() {
+  console.log("Dashboard rendered");
 
-  const getCalendarData = async () => {
-    try {
-      const response = await api.get("/LeaveRequests/GetClanderData");
-      console.log(response.data);
-    } catch (error) {
-      console.error("Error fetching calendar data:", error);
-    }
-  };
+  // useEffect(() => {
+  //   console.log("useEffect called");
+  //   const getCalendarData = async () => {
+  //     try {
+  //       const response = await api.get("/LeaveRequests/GetClanderData");
+  //       console.log(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching calendar data:", error);
+  //     }
+  //   };
 
-  getCalendarData();
+  //   getCalendarData();
+  // }, []);
   return (
     <div className="dashboard">
       <div className="title">

@@ -19,11 +19,13 @@ export default function Login() {
         password: password,
       });
 
-      if (response.data && response.data.user) {
+      if (response.data && response.data.user && response.data.MachineName) {
         const userData = JSON.parse(response.data.user);
         if (userData.access_token) {
           localStorage.setItem("access_token", userData.access_token);
+          localStorage.setItem("machine_name", response.data.MachineName);
           console.log("Login successful, token stored in local storage");
+          console.log(response);
           navigate("/")
         } else {
           console.log("Login failed: No access token received in user data");
