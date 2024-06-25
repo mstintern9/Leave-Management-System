@@ -23,16 +23,6 @@ import Select from "@mui/material/Select";
 import { styled } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
 
-const data = [
-  { name: "1 - 5", uv: 7000, pv: 2400, amt: 2400 },
-  { name: "6 - 10", uv: 6500, pv: 1398, amt: 2210 },
-  { name: "11 - 15", uv: 5400, pv: 9800, amt: 2290 },
-  { name: "16 - 20", uv: 3580, pv: 3908, amt: 2000 },
-  { name: "21 - 25", uv: 6590, pv: 4800, amt: 2181 },
-  { name: "26 - 30", uv: 6590, pv: 4800, amt: 2181 },
- 
-];
-
 const yAxisLabels = [
   "1 hour",
   "2 hours",
@@ -46,7 +36,6 @@ const yAxisLabels = [
 ];
 
 const columns = [
-  
   {
     field: "name",
     headerName: "Name",
@@ -89,7 +78,9 @@ const columns = [
     headerClassName: "header-cell",
     editable: true,
     renderCell: (params) => {
-      const className = `status-${params.value.replace(/ /g, '-').toLowerCase()}`;
+      const className = `status-${params.value
+        .replace(/ /g, "-")
+        .toLowerCase()}`;
       return <span className={className}>{params.value}</span>;
     },
   },
@@ -102,20 +93,20 @@ export default function Attendance() {
   const [selectedMonth, setSelectedMonth] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
   const [machineName, setMachineName] = useState("");
-  const [attendanceData,setAttendanceData]=useState([]);
-  
+  const [attendanceData, setAttendanceData] = useState([]);
+
   const handleChange = (event) => {
     setAge(event.target.value);
   };
-  
+
   const handleMonthChange = (event) => {
     setSelectedMonth(event.target.value);
   };
-  
+
   const handleYearChange = (event) => {
     setSelectedYear(event.target.value);
   };
-  
+
   useEffect(() => {
     const machineNameFromStorage = localStorage.getItem("machine_name");
     setMachineName(machineNameFromStorage);
@@ -123,7 +114,7 @@ export default function Attendance() {
 
   const currentYear = new Date().getFullYear();
   const years = Array.from({ length: 3 }, (_, i) => currentYear - i);
-  
+
   const months = [
     "January",
     "February",
@@ -140,45 +131,44 @@ export default function Attendance() {
   ];
 
   const getStatus = (timeSpent) => {
-    const hours = parseInt(timeSpent.split('h')[0], 10); // Extract hours as an integer
+    const hours = parseInt(timeSpent.split("h")[0], 10);
     if (hours >= 9) return "Full Day";
     if (hours >= 7) return "Short Day";
     if (hours >= 5) return "Half Day";
     return "Leave";
   };
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     const getAttendanceData = async () => {
       try {
         const requestBody = {
-          employeeName: machineName, 
-          month: selectedMonth, 
-          year: selectedYear, 
+          employeeName: machineName,
+          month: selectedMonth,
+          year: selectedYear,
         };
-        
+
         const response = await api.post(
           "/AttendanceRecords/GetEmployeesAttendance",
           requestBody
         );
         console.log(response.data);
-        setAttendanceData(response.data)
+        setAttendanceData(response.data);
       } catch (error) {
         console.error("Error fetching attendance data:", error);
       }
     };
     getAttendanceData();
-  },[selectedYear])
-  
-  
+  }, [selectedYear]);
+
   const rows = attendanceData.map((item, index) => ({
-      id: index + 1,
-      name: item.machineName,
-      checkIn: `${item.from} AM`,
-      break: "1 hour", 
-      checkOut: `${item.to} PM`,
-      totalTime: item.timeSpent,
-      status: getStatus(item.timeSpent), 
-    }));
+    id: index + 1,
+    name: item.machineName,
+    checkIn: `${item.from} AM`,
+    break: "1 hour",
+    checkOut: `${item.to} PM`,
+    totalTime: item.timeSpent,
+    status: getStatus(item.timeSpent),
+  }));
 
   const menuProps = {
     PaperProps: {
@@ -188,6 +178,45 @@ export default function Attendance() {
       },
     },
   };
+
+  const transformAttendanceData = (attendanceData) => {
+    // Define your ranges
+    const ranges = [
+      { name: "1 - 5", minValue: 1, maxValue: 5 },
+      { name: "6 - 10", minValue: 6, maxValue: 10 },
+      { name: "11 - 15", minValue: 11, maxValue: 15 },
+      { name: "16 - 20", minValue: 16, maxValue: 20 },
+      { name: "21 - 25", minValue: 21, maxValue: 25 },
+      { name: "26 - 30", minValue: 26, maxValue: 30 },
+    ];
+
+    // Initialize an array to hold the transformed data
+    const transformedData = [];
+
+    // Loop through each range
+    ranges.forEach((range) => {
+      // Filter attendance data within the current range
+      const filteredData = attendanceData.filter((item) => {
+        const timeSpent = parseInt(item.timeSpent.split("h")[0], 10);
+        return timeSpent >= range.minValue && timeSpent <= range.maxValue;
+      });
+
+      // Calculate total time spent in this range
+      const totalTimeSpent = filteredData.reduce((acc, curr) => {
+        return acc + parseInt(curr.timeSpent.split("h")[0], 10);
+      }, 0);
+
+      // Push an object with the range name and total time spent to the transformed data array
+      transformedData.push({
+        name: range.name,
+        timeSpent: totalTimeSpent,
+      });
+    });
+
+    return transformedData;
+  };
+
+  const chartData = transformAttendanceData(attendanceData);
 
   const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
     padding: theme.spacing(0.5, 2),
@@ -262,7 +291,7 @@ export default function Attendance() {
               <AreaChart
                 width={500}
                 height={400}
-                data={data}
+                data={chartData}
                 margin={{
                   top: 2,
                   right: 40,
@@ -296,11 +325,11 @@ export default function Attendance() {
                 <Tooltip />
                 <Area
                   type="monotone"
-                  dataKey="uv"
+                  dataKey="timeSpent"
                   stroke="#2379CC"
                   fill="url(#gradient)"
                 >
-                  {data.map((entry, index) => (
+                  {chartData.map((entry, index) => (
                     <Label
                       key={`label-${index}`}
                       value={entry.uv}
