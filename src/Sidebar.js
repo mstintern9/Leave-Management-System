@@ -13,6 +13,7 @@ import "./styling/sidebar.css";
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import { LogoutOutlined } from "@mui/icons-material";
 
 const drawerWidth = 300;
 
@@ -101,11 +102,12 @@ const Sidebar = () => {
           }
         })}
         
-        <span className="sideBarBottom">
+        <span className="sideBarBottom" onClick={()=>{
+            localStorage.clear();
+            navigate("/login")
+          }}>
           <p style={{ marginLeft: "-1.5vh", color: "#6C7882", fontSize: "12px" }}>Account</p>
-          <p className="drawerParagraph"> <Person2OutlinedIcon />Profile</p>  
-          <p className="drawerParagraph"> <MessageOutlinedIcon /> Chat</p>  
-          <p className="drawerParagraph"> <SettingsOutlinedIcon /> Settings</p>  
+          <p className="drawerParagraph"> <LogoutOutlined /> Log Out</p>  
         </span>
       </List>
     </Drawer>
