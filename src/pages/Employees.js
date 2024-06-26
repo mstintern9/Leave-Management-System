@@ -64,19 +64,19 @@ export default function Employees() {
     fontSize: "0.875rem",
   }));
 
-  // useEffect(() => {
-  //   const getEmployeeData = async () => {
-  //     try {
-  //       const response = await api.get("/AuthUser/GetAllUsers");
-  //       console.log(response.data);
-  //       setEmployees(response.data);
-  //     } catch (error) {
-  //       console.error("Error fetching employee data:", error);
-  //     }
-  //   };
+  useEffect(() => {
+    const getEmployeeData = async () => {
+      try {
+        const response = await api.get("/AuthUser/GetAllUsers");
+        console.log(response.data);
+        setEmployees(response.data);
+      } catch (error) {
+        console.error("Error fetching employee data:", error);
+      }
+    };
 
-  //   getEmployeeData();
-  // }, []);
+    getEmployeeData();
+  }, []);
 
   const rows = [];
   for (let i = 0; i < employees.length; i += 5) {

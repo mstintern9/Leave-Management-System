@@ -14,7 +14,6 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  Label,
 } from "recharts";
 import { DataGrid } from "@mui/x-data-grid";
 import MenuItem from "@mui/material/MenuItem";
@@ -24,7 +23,8 @@ import { styled } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
 
 const yAxisLabels = [
-  "1 hour",
+  "0 hours",
+  "1 hours",
   "2 hours",
   "3 hours",
   "4 hours",
@@ -180,45 +180,55 @@ export default function Attendance() {
   };
 
   const transformAttendanceData = (attendanceData) => {
-    // Initialize an array to hold the transformed data
-    const transformedData = [];
-  
-    // Loop through each day of the month
-    for (let day = 1; day <= 30; day++) {
-      // Find data for the current day
-      const dayData = attendanceData.find(item => {
-        const itemDate = new Date(item.start);
-        return itemDate.getDate() === day; // Compare day of the month
+    const ranges = [
+      { name: "1-5", minValue: 1, maxValue: 5 },
+      { name: "6-10", minValue: 6, maxValue: 10 },
+      { name: "11-15", minValue: 11, maxValue: 15 },
+      { name: "16-20", minValue: 16, maxValue: 20 },
+      { name: "21-25", minValue: 21, maxValue: 25 },
+      { name: "26-30", minValue: 26, maxValue: 30 },
+    ];
+
+    const calculateTotalHours = (filteredData) => {
+      return filteredData.reduce((acc, curr) => {
+        return acc + parseInt(curr.timeSpent.split("h")[0], 10);
+      }, 0);
+    };
+
+    const transformedData = ranges.map((range) => {
+      const filteredData = attendanceData.filter((item) => {
+        const day = new Date(item.start).getDate();
+        return day >= range.minValue && day <= range.maxValue;
       });
-  
-      // Log the dayData for debugging
-      console.log(`Day ${day} data:`, dayData);
-  
-      // If data is found for the day, add it to the transformed data
-      if (dayData) {
-        // Extract hours from timeSpent string
-        const hours = parseInt(dayData.timeSpent.split("h")[0], 10);
-        transformedData.push({
-          name: `${day}`, // Name can be the day number
-          timeSpent: hours
+
+      const totalHours = calculateTotalHours(filteredData);
+      const details = [];
+      for (let day = range.minValue; day <= range.maxValue; day++) {
+        const dayData = filteredData.find((item) => {
+          return new Date(item.start).getDate() === day;
         });
-      } else {
-        // If no data is found for the day, add a placeholder entry
-        transformedData.push({
-          name: `${day}`,
-          timeSpent: 0 // or any default value
-        });
+        if (dayData) {
+          details.push({
+            day: day,
+            hours: parseInt(dayData.timeSpent.split("h")[0], 10),
+          });
+        } else {
+          details.push({
+            day: day,
+            hours: 0,
+          });
+        }
       }
-    }
-  
-    // Log the transformed data for debugging
-    console.log('Transformed Data:', transformedData);
-  
+      return {
+        name: range.name,
+        timeSpent: totalHours,
+        details: details,
+      };
+    });
+
+    console.log("Transformed data:", transformedData);
     return transformedData;
   };
-  
-  
-  
 
   const chartData = transformAttendanceData(attendanceData);
 
@@ -226,6 +236,31 @@ export default function Attendance() {
     padding: theme.spacing(0.5, 2),
     fontSize: "0.875rem",
   }));
+
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      const data = payload[0].payload;
+      if (data.details && Array.isArray(data.details)) {
+        return (
+          <div className="custom-tooltip">
+            <p>{`Range: ${data.name}`}</p>
+            <p>{`Total Hours: ${data.timeSpent}`}</p>
+            <p>Details:</p>
+            <ul>
+              {data.details.map((detail, index) => (
+                <li
+                  key={index}
+                >{`Day ${detail.day}: ${detail.hours} hours`}</li>
+              ))}
+            </ul>
+          </div>
+        );
+      }
+    }
+
+    return null;
+  };
+
   return (
     <div className="attendance">
       <div className="firstContainer">
@@ -287,63 +322,21 @@ export default function Attendance() {
             </CardComponent>
           </div>
           <div className="secondChartContainer">
-            <ResponsiveContainer
-              width="97%"
-              height="83%"
-              style={{ paddingTop: "2vh", marginLeft: "2vh" }}
-            >
-              <AreaChart
-                width={500}
-                height={400}
-                data={chartData}
-                margin={{
-                  top: 2,
-                  right: 40,
-                  left: 0,
-                  bottom: 0,
-                }}
-              >
-                <defs>
-                  <linearGradient
-                    id="gradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="0%"
-                    y2="100%"
-                  >
-                    <stop offset="0%" stopColor="rgba(16, 82, 159, 0.56)" />
-                    <stop offset="60%" stopColor="rgba(14, 104, 210, 0.48)" />
-                    <stop offset="100%" stopColor="rgba(14, 104, 210, 0.32)" />
-                  </linearGradient>
-                </defs>
+            <ResponsiveContainer width="100%" height={370}>
+              <AreaChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
-                <YAxis
-                  tickFormatter={(value) => {
-                    const index = Math.floor(value / 1000);
-                    return yAxisLabels[index] || "";
-                  }}
-                  domain={[0, 8000]}
-                  ticks={[0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000]}
-                />
-                <Tooltip />
-                <Area
-                  type="monotone"
-                  dataKey="timeSpent"
-                  stroke="#2379CC"
-                  fill="url(#gradient)"
-                >
-                  {chartData.map((entry, index) => (
-                    <Label
-                      key={`label-${index}`}
-                      value={entry.uv}
-                      position="top"
-                      fill="#000"
-                      fontSize={10}
-                      offset={10}
-                    />
-                  ))}
-                </Area>
+                <YAxis />
+                <Tooltip content={<CustomTooltip />} />
+                {chartData.map((rangeData, index) => (
+                  <Area
+                    key={index}
+                    type="monotone"
+                    dataKey="timeSpent"
+                    stroke="#2379CC"
+                    fill="#8884d8"
+                  />
+                ))}
               </AreaChart>
             </ResponsiveContainer>
           </div>
