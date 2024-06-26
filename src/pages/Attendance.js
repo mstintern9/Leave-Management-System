@@ -158,7 +158,7 @@ export default function Attendance() {
       }
     };
     getAttendanceData();
-  }, [selectedYear]);
+  }, [selectedYear,selectedMonth]);
 
   const rows = attendanceData.map((item, index) => ({
     id: index + 1,
